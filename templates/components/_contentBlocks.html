@@ -1,0 +1,163 @@
+{% if entryblocks is not defined %}
+{% set entryblocks = entry.contentBlocks %}
+{% endif %}
+
+{% for contentBlock in entryblocks %}
+{% switch contentBlock.type %}
+
+    {% case 'text' %}
+
+        <div class="content text">
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12 xlarge-10">
+                    {{ contentBlock.text }}
+
+                    {% if contentBlock.ctaTitle or contentBlock.ctaUrlText %}
+                    <div class="cta">
+                        {% if contentBlock.ctaTitle %}
+                        <h4>{{ contentBlock.ctaTitle }}</h4>
+                        {% endif %}
+                        <a href="{{ contentBlock.ctaUrl }}">
+                            {{ contentBlock.ctaUrlText }}
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    {% case 'images' %}
+
+    {% set images = contentBlock.images.all() %}
+    {% if images|length > 1 %}
+
+        <div class="content slider">
+            <div class="grid-x noPadding">
+                <div class="cell small-12">
+                    <div class="slider js_slider contentSlider">
+                        <div class="frame js_frame">
+                            <ul class="slides js_slides">
+                                {% for image in images %}
+                                <li class="js_slide">
+                                    <figure>
+
+                                        {% set miniImage = craft.imager.transformImage(image, {
+                                        width: 300,
+                                        height: 300,
+                                        mode: 'fit',
+                                        jpegQuality: 95 }) %}
+                                        {% set dominantColor = craft.imager.getDominantColor(miniImage) %}
+
+                                        {% set transformedImages = craft.imager.transformImage(image, [
+                                        { width: 2400 },
+                                        { width: 380 }
+                                        ], {ratio: 16/9, position: image.getFocalPoint() },
+                                        { fillTransforms: true }) %}
+                                        <img sizes="100vw"
+                                             class="lazyload"
+                                             data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+                                             srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight(), color:dominantColor }) }}"
+                                             src="{{ transformedImages[0].url }}"
+                                             alt="{{ image.title }}">
+
+                                        {% if image.description %}
+                                            <figcaption>{{ image.description }}</figcaption>
+                                        {% endif %}
+                                    </figure>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <span class="js_prev prev">
+                                <svg width="46" height="31" viewBox="0 0 46 31" xmlns="http://www.w3.org/2000/svg"><path fill="#FFF" d="M46 13.563H7.369L18.124 2.732 15.392 0 0 15.5 15.392 31l2.712-2.732L7.37 17.438H46z" fill-rule="evenodd"/></svg>
+                            </span>
+                        <span class="js_next next">
+                                <svg width="46" height="31" viewBox="0 0 46 31" xmlns="http://www.w3.org/2000/svg"><path fill="#FFF" d="M46 13.563H7.369L18.124 2.732 15.392 0 0 15.5 15.392 31l2.712-2.732L7.37 17.438H46z" fill-rule="evenodd"/></svg>
+                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+
+        {% set image = images[0] %}
+
+        <div class="content image">
+            <div class="grid-x noPadding">
+                <div class="cell small-12">
+
+                    {% set transformedImages = craft.imager.transformImage(image, [
+                    { width: 2400 },
+                    { width: 380 }
+                    ], {mode: 'fit' },
+                    { fillTransforms: true }) %}
+
+                    <img sizes="100vw"
+                         class="lazyload"
+                         data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+                         srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+                         src="{{ transformedImages[0].url }}"
+                         alt="{{ image.title }}">
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+    {% case 'textWithImage' %}
+
+        {% set position = contentBlock.position %}
+
+        <div class="content textWithImage{% if position == 'right' %} right{% else %} left{% endif %} {% if contentBlock.padding == 0 %} noPadding{% endif %}">
+            <div class="grid-x grid-padding-x align-middle">
+                <div class="cell small-12 medium-6 image{% if position == 'right' %} medium-order-2{% endif %}">
+                    {% set image = contentBlock.mainImage.first() %}
+                    {% if image %}
+                        {% set transformedImages = craft.imager.transformImage(image, [
+                        { width: 1400 },
+                        { width: 380 }
+                        ], {mode: 'fit'},
+                        { fillTransforms: true }) %}
+                        <img sizes="(max-width: 639px) 100vw, 50vw"
+                             class="lazyload"
+                             data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+                             srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+                             src="{{ transformedImages[0].url }}"
+                             alt="{{ image.title }}">
+                    {% endif %}
+                </div>
+                <div class="cell small-12 medium-6{% if position == 'right' %} medium-order-1{% endif %}">
+                    {{ contentBlock.text }}
+                    {% if contentBlock.ctaTitle or contentBlock.ctaUrlText %}
+                    <div class="cta">
+                        {% if contentBlock.ctaTitle %}
+                            <h4>{{ contentBlock.ctaTitle }}</h4>
+                        {% endif %}
+                        <a href="{{ contentBlock.ctaUrl }}">
+                            {{ contentBlock.ctaUrlText }}
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    {% case 'video' %}
+
+        <div class="content video">
+            <div class="grid-x noPadding">
+                <div class="cell small-12">
+                    {% set embed = craft.videoEmbedder.embed(contentBlock.videoUrl) %}
+
+                    {% if embed | length %}
+                        <div class="responsive-embed widescreen">
+                            {{ embed }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+{% endswitch %}
+{% endfor %}

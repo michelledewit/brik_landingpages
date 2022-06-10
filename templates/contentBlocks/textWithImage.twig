@@ -1,0 +1,409 @@
+<!-- methodisch -->
+{% set projects = contentBlock.profileM.projectOverview|slice(0,2) %}
+{% set projects2 = contentBlock.profileM.projectOverview|slice(2,2) %}
+<div id="projecten" x-show="methodicScore > competitiveScore && methodicScore > spontaniousScore && methodicScore > humanisticScore && methodicScore >= 20" class="relative mt-14 mb-8 overflow-hidden">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileM.overviewTitle}}</h2>
+		<p class="text-lg text-center leading-6">{{contentBlock.profileM.overviewSubtitle}}</p>
+	</div>
+	{% for project in projects %}
+		{% if project.blockPosition == 'left' %}
+			<div class="relative">
+				<div class="lg:mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-12 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="max-w-xl mx-auto lg:py-12 lg:max-w-none">
+						<div>
+							<div class="">
+								<h2 class="text-3xl leading-7 tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+								<div class="mt-4">
+									{% if project.blockLink and project.blockLink.url %}
+										<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+											{{ project.blockLink.text }}
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0">
+						<div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if project.blockPosition == 'right' %}
+			<div class="mt-6">
+				<div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+						<div>
+							<div class="">
+								<h2 class="text-3xl tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+								<div class="mt-4">
+									{% if project.blockLink and project.blockLink.url %}
+										<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+											{{ project.blockLink.text }}
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+						<div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<div x-data="{ open: false }">
+		<div :class="open ? 'pt-6' : 'hidden'">
+			{% for project in projects2 %}
+				{% if project.blockPosition == 'left' %}
+					<div class="relative">
+						<div class="lg:mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-12 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+							<div class="max-w-xl mx-auto lg:py-12 lg:max-w-none">
+								<div>
+									<div class="">
+										<h2 class="text-3xl leading-7 tracking-tight">{{project.blockTitle}}</h2>
+										<p class="mt-2 text-lg">{{project.blockText}}</p>
+										<div class="mt-4">
+											{% if project.blockLink and project.blockLink.url %}
+												<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+													{{ project.blockLink.text }}
+												</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-12 sm:mt-16 lg:mt-0">
+								<div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+									{% set image = project.blockImage.first() %}
+									{% if image %}
+										{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+										<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+				{% if project.blockPosition == 'right' %}
+					<div class="mt-6">
+						<div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+							<div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+								<div>
+									<div class="">
+										<h2 class="text-3xl tracking-tight">{{project.blockTitle}}</h2>
+										<p class="mt-2 text-lg">{{project.blockText}}</p>
+										<div class="mt-4">
+											{% if project.blockLink and project.blockLink.url %}
+												<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+													{{ project.blockLink.text }}
+												</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+								<div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+									{% set image = project.blockImage.first() %}
+									{% if image %}
+										{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+										<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div @click="open = ! open" :class="open ? 'hidden' : 'mx-auto flex justify-center mb-8'">
+			<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' class="mt-4 w-full inline-flex items-center justify-center px-6 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+				Meer tonen
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- spontaan -->
+{% set projects = contentBlock.profileS.projectOverview %}
+<div id="projecten" x-show="spontaniousScore > competitiveScore && spontaniousScore > humanisticScore && spontaniousScore > methodicScore && spontaniousScore >= 20" class="relative mt-14 mb-8 overflow-hidden">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileS.overviewTitle}}</h2>
+	</div>
+	{% for project in projects %}
+		{% if project.blockPosition == 'left' %}
+			<div class="relative">
+				<div class="lg:mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-12 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="max-w-xl mx-auto lg:py-12 lg:max-w-none">
+						<div>
+							<div class="">
+								<h2 class="text-3xl leading-7 tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0">
+						<div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img class="w-full rounded-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if project.blockPosition == 'right' %}
+			<div class="mt-6">
+				<div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+						<div>
+							<div class="">
+								<h2 class="text-3xl tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+						<div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img class="w-full rounded-xl lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+
+<!-- competitief -->
+<div id="projecten" x-show="competitiveScore > humanisticScore && competitiveScore > spontaniousScore && competitiveScore > methodicScore && competitiveScore >= 20" class="my-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileC}}</h2>
+	</div>
+  <div class="bg-white">
+  <div class="max-w-7xl mx-auto py-4 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+      <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+        <img class="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+      </div>
+      <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+        <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage">
+      </div>
+      <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+        <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit">
+      </div>
+      <div class="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
+        <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-12" src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg" alt="Transistor">
+      </div>
+      <div class="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
+        <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-12" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg" alt="Workcation">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- humanistisch -->
+{% set projects = contentBlock.profileH.projectOverview|slice(0,2) %}
+{% set projects2 = contentBlock.profileH.projectOverview|slice(2,2) %}
+<div id="projecten" x-show="humanisticScore >= competitiveScore && humanisticScore >= spontaniousScore && humanisticScore >= methodicScore || spontaniousScore < 20 && competitiveScore < 20 && methodicScore < 20 " class="relative mt-14 mb-8 overflow-hidden">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileH.overviewTitle}}</h2>
+		<p class="text-lg text-center leading-6">{{contentBlock.profileH.overviewSubtitle}}</p>
+	</div>
+	{% for project in projects %}
+		{% if project.blockPosition == 'left' %}
+			<div class="relative">
+				<div class="lg:mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-12 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="max-w-xl mx-auto lg:py-12 lg:max-w-none">
+						<div>
+							<div class="">
+								<h2 class="text-3xl leading-7 tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+								<div class="mt-4">
+									{% if project.blockLink and project.blockLink.url %}
+										<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+											{{ project.blockLink.text }}
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0">
+						<div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+		{% if project.blockPosition == 'right' %}
+			<div class="mt-6">
+				<div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+					<div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+						<div>
+							<div class="">
+								<h2 class="text-3xl tracking-tight">{{project.blockTitle}}</h2>
+								<p class="mt-2 text-lg">{{project.blockText}}</p>
+								<div class="mt-4">
+									{% if project.blockLink and project.blockLink.url %}
+										<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+											{{ project.blockLink.text }}
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+						<div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+							{% set image = project.blockImage.first() %}
+							{% if image %}
+								{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+								<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<div x-data="{ open: false }">
+		<div :class="open ? 'pt-6' : 'hidden'">
+			{% for project in projects2 %}
+				{% if project.blockPosition == 'left' %}
+					<div class="relative">
+						<div class="lg:mx-auto lg:max-w-7xl px-4 sm:px-6 lg:px-12 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+							<div class="max-w-xl mx-auto lg:py-12 lg:max-w-none">
+								<div>
+									<div class="">
+										<h2 class="text-3xl leading-7 tracking-tight">{{project.blockTitle}}</h2>
+										<p class="mt-2 text-lg">{{project.blockText}}</p>
+										<div class="mt-4">
+											{% if project.blockLink and project.blockLink.url %}
+												<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+													{{ project.blockLink.text }}
+												</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-12 sm:mt-16 lg:mt-0">
+								<div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+									{% set image = project.blockImage.first() %}
+									{% if image %}
+										{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+										<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+				{% if project.blockPosition == 'right' %}
+					<div class="mt-6">
+						<div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+							<div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-12 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+								<div>
+									<div class="">
+										<h2 class="text-3xl tracking-tight">{{project.blockTitle}}</h2>
+										<p class="mt-2 text-lg">{{project.blockText}}</p>
+										<div class="mt-4">
+											{% if project.blockLink and project.blockLink.url %}
+												<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="{{ project.blockLink.url }}" target="{{ project.blockLink.target }}" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-gray-300 sm:w-auto text-sm">
+													{{ project.blockLink.text }}
+												</a>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+								<div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+									{% set image = project.blockImage.first() %}
+									{% if image %}
+										{% set transformedImages = craft.imager.transformImage(image, [
+                { width: 1400 },
+                { width: 380 }
+                ], {mode: 'fit'},
+                { fillTransforms: true }) %}
+										<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full rounded-xl lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div @click="open = ! open" :class="open ? 'hidden' : 'mx-auto flex justify-center mb-8'">
+			<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}'  class="mt-4 w-full inline-flex items-center justify-center px-6 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+				Meer tonen
+			</a>
+		</div>
+	</div>
+</div>

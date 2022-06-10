@@ -1,0 +1,93 @@
+<!-- humanistisch -->
+{% set teamMembers = contentBlock.profileH.teamOverview.all()|slice(0,4) %}
+{% set teamMembers2 = contentBlock.profileH.teamOverview.all()|slice(4,4) %}
+<div x-show="humanisticScore >= competitiveScore && humanisticScore >= spontaniousScore && humanisticScore >= methodicScore || spontaniousScore < 20 && competitiveScore < 20 && methodicScore < 20 " class="max-w-7xl mx-auto py-8 text-center px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileH.overviewTitle}}</h2>
+		<p class="text-lg text-center leading-6">{{contentBlock.profileH.overviewSubtitle}}</p>
+	</div>
+	<ul role="list" class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12">
+		{% for teamMember in teamMembers %}
+			<li class="mt-6">
+				<div class="space-y-4">
+					{% set image = teamMember.blockImage.first() %}
+					{% if image %}
+						{% set transformedImages = craft.imager.transformImage(image, [
+                  { width: 1400 },
+                  { width: 380 }
+                  ], {mode: 'fit'},
+                  { fillTransforms: true }) %}
+						<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24 object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+					{% endif %}
+					<div class="space-y-2">
+						<div class="text-xs lg:text-sm">
+							<h3 class="font-medium">{{teamMember.blockName}}</h3>
+							<p class="">{{teamMember.blockFunction}}</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+	<div x-data="{ open: false }">
+		<ul :class="open ? 'pt-6' : 'hidden'" role="list" class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12">
+			{% for teamMember in teamMembers2 %}
+				<li>
+					<div class="space-y-4">
+						{% set image = teamMember.blockImage.first() %}
+						{% if image %}
+							{% set transformedImages = craft.imager.transformImage(image, [
+                  { width: 1400 },
+                  { width: 380 }
+                  ], {mode: 'fit'},
+                  { fillTransforms: true }) %}
+							<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24 object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+						{% endif %}
+						<div class="space-y-2">
+							<div class="text-xs lg:text-sm">
+								<h3 class="font-medium">{{teamMember.blockName}}</h3>
+								<p class="">{{teamMember.blockFunction}}</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+		<div @click="open = ! open" :class="open ? 'hidden' : 'mx-auto flex justify-center mb-8'">
+			<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' class="mt-4 w-full inline-flex items-center justify-center px-6 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+				Meer tonen
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- spontaan -->
+{% set teamMembers = contentBlock.profileS.teamOverview.all() %}
+<div x-show="spontaniousScore > competitiveScore && spontaniousScore > humanisticScore && spontaniousScore > methodicScore && spontaniousScore >= 20" class="max-w-7xl mx-auto py-8 text-center px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+		<h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileS.overviewTitle}}</h2>
+	</div>
+	<ul role="list" class="mx-auto grid grid-cols-2 gap-x-4 gap-y-8 grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12">
+		{% for teamMember in teamMembers %}
+			<li class="mt-6">
+				<div @mouseleave="incrementHumanisticScoreHover()" class="space-y-4">
+					{% set image = teamMember.blockImage.first() %}
+					{% if image %}
+						{% set transformedImages = craft.imager.transformImage(image, [
+                  { width: 1400 },
+                  { width: 380 }
+                  ], {mode: 'fit'},
+                  { fillTransforms: true }) %}
+						<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24 object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+					{% endif %}
+					<div class="space-y-2">
+						<div class="text-xs lg:text-sm">
+							<h3 class="font-medium">{{teamMember.blockName}}</h3>
+							<p class="">{{teamMember.blockFunction}}</p>
+						</div>
+					</div>
+				</div>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

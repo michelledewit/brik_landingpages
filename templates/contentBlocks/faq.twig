@@ -1,0 +1,67 @@
+<!-- Humanistisch-->
+{% set faqs = contentBlock.profileH.questionsOverview.all() %}
+<div x-show="humanisticScore > competitiveScore && humanisticScore > spontaniousScore && humanisticScore > methodicScore && humanisticScore >= 20">
+  <div class="divide-y-2 divide-gray-200 max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-12 divide-y-2 divide-gray-200">
+    <div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileH.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileH.overviewSubtitle}}</p>
+    </div>
+    <div class="mt-6 divide-y divide-gray-200">
+      {% for faq in faqs %}
+      <div class="py-2" x-data="{ open: false }">
+        <div class="text-sm">
+          <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+            aria-controls="faq-0" aria-expanded="false" @click="open = ! open">
+            <span data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' class="mt-1 text-black"> {{faq.question}} </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}'
+                :class="open ? 'rotate-180 h-4 w-4 transform text-red-400' : 'rotate-0 h-4 w-4 transform text-red-400'"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div x-show="open" id="faq-0">
+          <p data-ls='{"mouseover":[1,1,-1,-1,1], "click":[0,0,0,0,0]}' class="text-xs text-black w-3/4 mb-1">{{faq.answer}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Methodisch-->
+{% set faqs = contentBlock.profileM.questionsOverview.all() %}
+<div x-show="methodicScore >= competitiveScore && methodicScore >= spontaniousScore && methodicScore >= humanisticScore || spontaniousScore < 20 && competitiveScore < 20 && humanisticScore < 20" class="">
+  <div class="divide-y-2 divide-gray-200 max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-12">
+    <div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileM.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileM.overviewSubtitle}}</p>
+    </div>
+    <div class="mt-6 divide-y divide-gray-200">
+      {% for faq in faqs %}
+      <div class="py-2" x-data="{ open: false }">
+        <div class="text-sm">
+          <button type="button" class="text-left w-full flex justify-between items-start text-gray-400"
+            aria-controls="faq-0" aria-expanded="false" @click="open = ! open">
+            <span data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' class="mt-1 text-black"> {{faq.question}} </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}'
+                :class="open ? 'rotate-180 h-4 w-4 transform text-red-400' : 'rotate-0 h-4 w-4 transform text-red-400'"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div x-show="open" id="faq-0">
+          <p data-ls='{"mouseover":[1,1,-1,-1,1], "click":[0,0,0,0,0]}' class="text-xs text-black w-3/4 mb-1">{{faq.answer}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

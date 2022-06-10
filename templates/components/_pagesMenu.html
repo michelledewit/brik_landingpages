@@ -1,0 +1,8 @@
+{# {% set pages = mainMenu.pages.all() %}
+<ul class="menu align-right">
+    {% for page in pages %}
+        {% if page.page and page.page.url %}
+            <li><a href="{{ page.page.url }}" class="ajaxContent {{ node.classes }}">{{ page.page.text|lower }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul> #}

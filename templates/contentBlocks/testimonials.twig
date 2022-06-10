@@ -1,0 +1,227 @@
+{# humanistisch #}
+{% set testimonials = contentBlock.profileH.testimonialOverview.all() %}
+<div x-show="humanisticScore > competitiveScore && humanisticScore > spontaniousScore && humanisticScore > methodicScore && humanisticScore >= 20">
+<div class="relative max-w-7xl pt-8 mx-auto px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileH.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileH.overviewSubtitle}}</p>
+	</div>
+</div>
+{% for testimonial in testimonials %}
+	<div class="relative bg-gray-200 mb-8">
+		<div class="px-4 sm:px-6 lg:px-12 lg:flex lg:items-center py-4">
+			<div class="hidden lg:block lg:flex-shrink-0">
+				{% set image = testimonial.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="h-32 w-32 rounded-full lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+			<div class="relative lg:ml-10">
+				<div class="relative">
+					<div class="text-base leading-4">
+						<p>{{testimonial.blockText}}</p>
+					</div>
+					<footer class="mt-2">
+						<div class="ml-4 lg:ml-0">
+							<div class="text-base">{{testimonial.blockName}}</div>
+							<div class="text-base text-red-400">{{testimonial.blockFunction}}</div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<div class="text-red-400 absolute top-20 left-6 transform rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div class="text-red-400 absolute top-20 right-6 transform -rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+	</div>
+{% endfor %}
+</div>
+
+{# spontaan #}
+<div x-show="spontaniousScore > competitiveScore && spontaniousScore > humanisticScore && spontaniousScore > methodicScore && spontaniousScore >= 20">
+{% set testimonials = contentBlock.profileS.testimonialOverview.all() %}
+<div class="relative max-w-7xl pt-8 mx-auto px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileS.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileS.overviewSubtitle}}</p>
+	</div>
+</div>
+{% for testimonial in testimonials %}
+	<div class="relative bg-gray-200 mb-8">
+		<div class="px-4 sm:px-6 lg:px-12 lg:flex lg:items-center py-4">
+			<div class="hidden lg:block lg:flex-shrink-0">
+				{% set image = testimonial.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="h-32 w-32 rounded-full lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+			<div class="relative lg:ml-10">
+				<div class="relative">
+					<div class="text-base leading-4">
+						<p>{{testimonial.blockText}}</p>
+					</div>
+					<footer class="mt-2">
+						<div class="ml-4 lg:ml-0">
+							<div class="text-base">{{testimonial.blockName}}</div>
+							<div class="text-base text-red-400">{{testimonial.blockFunction}}</div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<div class="text-red-400 absolute top-20 left-6 transform rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div class="text-red-400 absolute top-20 right-6 transform -rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+	</div>
+{% endfor %}
+</div>
+
+{# methodisch #}
+<div x-show="methodicScore > competitiveScore && methodicScore > spontaniousScore && methodicScore > humanisticScore && methodicScore >= 20">
+{% set testimonials = contentBlock.profileM.testimonialOverview.all() %}
+<div class="relative max-w-7xl pt-8 mx-auto px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileM.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileM.overviewSubtitle}}</p>
+	</div>
+</div>
+{% for testimonial in testimonials %}
+	<div class="relative bg-gray-200 py-4 mb-8">
+		{% set image = testimonial.companyLogo.first() %}
+		{% if image %}
+			{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+			<img data-ls='{"mouseover":[0,1,-1,1,-1], "click":[0,0,0,0,0]}' class="mx-auto h-10 lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+		{% endif %}
+		<div class="mt-2">
+			<div class="max-w-3xl w-4/5 mx-auto my-2 px-4 sm:px-6 lg:px-12 text-center text-lg leading-6">
+				{{testimonial.blockText}}
+			</div>
+			<div class="mt-2">
+				<div class="md:flex md:items-center md:justify-center">
+					<div data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="md:flex-shrink-0">
+						{% set image = testimonial.blockImage.first() %}
+						{% if image %}
+							{% set transformedImages = craft.imager.transformImage(image, [
+                            { width: 1400 },
+                            { width: 380 }
+                            ], {mode: 'fit'},
+                            { fillTransforms: true }) %}
+							<img class="mx-auto h-10 w-10 rounded-full lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+						{% endif %}
+					</div>
+					<div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+						<div class="text-base">{{testimonial.blockName}}</div>
+
+						<svg class="hidden md:block h-5 w-5 text-red-400" fill="currentColor" viewbox="0 0 20 20">
+							<path d="M11 0h3L9 20H6l5-20z"/>
+						</svg>
+
+						<div class="text-base">{{testimonial.blockFunction}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-red-400 absolute top-20 left-6 transform rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div class="text-red-400 absolute top-20 right-6 transform -rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+	</div>
+{% endfor %}
+</div>
+
+{# competitief #}
+<div x-show="competitiveScore >= humanisticScore && competitiveScore >= spontaniousScore && competitiveScore >= methodicScore || spontaniousScore < 20 && humanisticScore < 20 && methodicScore < 20">
+{% set testimonials = contentBlock.profileC.testimonialOverview.all() %}
+<div class="relative max-w-7xl pt-8 mx-auto px-4 sm:px-6 lg:px-12">
+	<div class="mx-auto max-w-5xl w-3/4 mb-4 text-center text-black">
+      <h2 class="text-3xl tracking-tight mb-2">{{contentBlock.profileC.overviewTitle}}</h2>
+      <p class="text-lg text-center leading-6">{{contentBlock.profileC.overviewSubtitle}}</p>
+	</div>
+</div>
+{% for testimonial in testimonials %}
+	<div class="relative bg-gray-200 py-4 mb-8">
+		{% set image = testimonial.companyLogo.first() %}
+		{% if image %}
+			{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+			<img data-ls='{"mouseover":[0,1,-1,1,-1], "click":[0,0,0,0,0]}' class="mx-auto h-10 lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+		{% endif %}
+		<div class="mt-2">
+			<div class="max-w-3xl w-4/5 mx-auto my-2 px-4 sm:px-6 lg:px-12 text-center text-lg leading-6">
+				{{testimonial.blockText}}
+			</div>
+			<div class="mt-2">
+				<div class="md:flex md:items-center md:justify-center">
+					<div class="md:flex-shrink-0">
+						{% set image = testimonial.blockImage.first() %}
+						{% if image %}
+							{% set transformedImages = craft.imager.transformImage(image, [
+                            { width: 1400 },
+                            { width: 380 }
+                            ], {mode: 'fit'},
+                            { fillTransforms: true }) %}
+							<img data-ls='{"mouseover":[0,-1,1,-1,1], "click":[0,0,0,0,0]}' class="mx-auto h-10 w-10 rounded-full lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+						{% endif %}
+					</div>
+					<div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+						<div class="text-base">{{testimonial.blockName}}</div>
+
+						<svg class="hidden md:block h-5 w-5 text-red-400" fill="currentColor" viewbox="0 0 20 20">
+							<path d="M11 0h3L9 20H6l5-20z"/>
+						</svg>
+
+						<div class="text-base">{{testimonial.blockFunction}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-red-400 absolute top-20 left-6 transform rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		<div class="text-red-400 absolute top-20 right-6 transform -rotate-90">
+			<svg data-ls='{"mouseover":[1,1,-1,1,1], "click":[2,2,-2,2,2]}' width="20" height="12" viewbox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M1 1L9 9L17 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+	</div>
+{% endfor %}
+</div>

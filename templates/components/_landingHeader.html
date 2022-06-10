@@ -1,0 +1,398 @@
+{% if entryblocks is not defined %}
+{% set entryblocks = entry.landingHeader %}
+{% endif %}
+
+{% for contentBlock in entryblocks %}
+
+
+<!--Methodisch-->
+{% set profilesM = contentBlock.profileM %}
+{% for profileM in profilesM %}
+<div x-show="methodicScore > competitiveScore && methodicScore > spontaniousScore && methodicScore > humanisticScore && methodicScore >= 20" class="relative bg-gray-50">
+  <div class="relative pt-2">
+    <div class="max-w-7xl mx-auto lg:px-12">
+      <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+        <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+              <svg width="95" height="34" viewBox="0 0 95 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.8993 16.6415C22.4586 17.1414 23.8037 18.1525 24.7173 19.5115C25.7087 20.9273 26.2293 22.6192 26.2053 24.3475C26.2053 27.2901 25.2573 29.5488 23.3613 31.1235C21.4653 32.6981 18.7986 33.4868 15.3613 33.4895H0.383301V0.855469H14.3613C17.7973 0.855469 20.4726 1.61747 22.3873 3.14147C24.302 4.66547 25.2586 6.86214 25.2573 9.73147C25.2573 11.4328 24.8406 12.8941 24.0073 14.1155C23.2655 15.2658 22.177 16.1505 20.8993 16.6415V16.6415ZM8.5173 13.7715H13.4073C15.958 13.7715 17.2333 12.7795 17.2333 10.7955C17.2333 8.84747 15.958 7.87281 13.4073 7.87147H8.5173V13.7715ZM8.5173 20.1495V26.4735H14.2573C15.4253 26.4735 16.3373 26.1901 16.9933 25.6235C17.3186 25.3409 17.576 24.9886 17.7464 24.5929C17.9167 24.1971 17.9957 23.768 17.9773 23.3375C17.9773 22.3455 17.6493 21.5661 16.9933 20.9995C16.3373 20.4328 15.4253 20.1495 14.2573 20.1495H8.5173Z"
+                  fill="black" />
+                <path
+                  d="M44.7613 9.57227V17.4923C43.7986 16.9963 42.6506 16.7483 41.3173 16.7483C38.9426 16.7483 37.5253 17.6516 37.0653 19.4583V33.4903H28.7173V9.57227H37.0613V11.6983C38.3713 9.92827 40.2393 9.57227 42.5433 9.57227H44.7613Z"
+                  fill="black" />
+                <path d="M56.0994 9.57227V33.4903H47.7554V9.57227H56.0994Z" fill="black" />
+                <path
+                  d="M75.3392 33.4908L69.4932 24.6208L67.8932 26.4807V33.4968H59.5552V0.71875H67.8992V17.2208L74.5952 9.56675H84.6412L75.5512 19.5067L84.9172 33.4908H75.3392Z"
+                  fill="black" />
+                <path
+                  d="M85.0654 28.8671C85.0506 28.2182 85.1669 27.573 85.4075 26.9702C85.6481 26.3674 86.0079 25.8194 86.4654 25.3591C86.9152 24.8924 87.4569 24.5241 88.0562 24.2772C88.6555 24.0304 89.2994 23.9105 89.9474 23.9251C90.5962 23.9104 91.2414 24.0269 91.8441 24.2675C92.4469 24.508 92.9949 24.8677 93.4554 25.3251C93.9258 25.783 94.296 26.3335 94.5428 26.9417C94.7897 27.55 94.9077 28.2029 94.8894 28.8591C94.9062 29.5189 94.7877 30.1753 94.541 30.7875C94.2944 31.3998 93.9249 31.9551 93.4554 32.4191C92.9999 32.8854 92.4535 33.2535 91.8502 33.5005C91.2468 33.7475 90.5992 33.8681 89.9474 33.8551C89.3056 33.8638 88.6687 33.7411 88.0761 33.4945C87.4835 33.2478 86.9476 32.8825 86.5014 32.4211C86.032 31.9582 85.6624 31.404 85.4154 30.7927C85.1684 30.1815 85.0493 29.5261 85.0654 28.8671V28.8671Z"
+                  fill="black" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+          <div class="hidden md:flex md:space-x-6 mr-6">
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#features" class="text-xs hover:text-gray-700">Features</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#projecten" class="text-xs hover:text-gray-700">Projecten</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#whitepaper" class="text-xs hover:text-gray-700">Whitepaper</a>
+          </div>
+          <span class="inline-flex rounded-md shadow">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')"
+              class="w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Contact opnemen </a>
+          </span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lg:relative">
+    <div class="mx-auto max-w-7xl w-full pt-2 pb-20 text-center lg:text-left">
+      <div class="px-12 mt-8 lg:w-1/2">
+        <h1 class="mt-3 text-4xl leading-8">
+          {{profileM.blockTitle}}
+        </h1>
+        <p class="mt-2 max-w-md mx-auto text-base">{{profileM.blockText}}</p>
+        <div class="mt-2 sm:flex sm:justify-center lg:justify-start">
+          <div class="">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}'
+              class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Download whitepaper </a>
+          </div>
+          <div class="mt-2 sm:mt-0 sm:ml-3">
+            <a data-ls='{"mouseover":[2,2,-2,-2,2], "click":[2,2,-2,-2,3]}' href="#whitepaper"
+              class=" mt-2 w-full inline-flex items-center justify-center bg-gray-200 px-3 py-1 border border-transparent font-medium text-gray-500 bg-white hover:opacity-80 sm:w-auto hover:text-black text-xs border border-gray-500">
+              Meer informatie</a>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-gray-400 tracking-wide font-semibold">Used by</p>
+        <div class="mt-2 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
+          <div class="flex flex-wrap items-start justify-between">
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+            </div>
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
+                alt="Workcation">
+            </div>
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+                alt="StaticKit">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+      {% set image = profileM.blockImage.first() %}
+      {% if image %}
+      {% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+      <img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="absolute inset-0 w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+        src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endfor %}
+
+<!--Humanistisch-->
+{% set profilesH = contentBlock.profileH %}
+{% for profileH in profilesH %}
+<div x-show="humanisticScore >= competitiveScore && humanisticScore >= spontaniousScore && humanisticScore >= methodicScore || spontaniousScore < 20 && competitiveScore < 20 && methodicScore < 20 " class="relative bg-gray-50">
+  <div class="relative pt-2">
+    <div class="max-w-7xl mx-auto lg:px-12">
+      <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+        <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+              <svg width="95" height="34" viewBox="0 0 95 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.8993 16.6415C22.4586 17.1414 23.8037 18.1525 24.7173 19.5115C25.7087 20.9273 26.2293 22.6192 26.2053 24.3475C26.2053 27.2901 25.2573 29.5488 23.3613 31.1235C21.4653 32.6981 18.7986 33.4868 15.3613 33.4895H0.383301V0.855469H14.3613C17.7973 0.855469 20.4726 1.61747 22.3873 3.14147C24.302 4.66547 25.2586 6.86214 25.2573 9.73147C25.2573 11.4328 24.8406 12.8941 24.0073 14.1155C23.2655 15.2658 22.177 16.1505 20.8993 16.6415V16.6415ZM8.5173 13.7715H13.4073C15.958 13.7715 17.2333 12.7795 17.2333 10.7955C17.2333 8.84747 15.958 7.87281 13.4073 7.87147H8.5173V13.7715ZM8.5173 20.1495V26.4735H14.2573C15.4253 26.4735 16.3373 26.1901 16.9933 25.6235C17.3186 25.3409 17.576 24.9886 17.7464 24.5929C17.9167 24.1971 17.9957 23.768 17.9773 23.3375C17.9773 22.3455 17.6493 21.5661 16.9933 20.9995C16.3373 20.4328 15.4253 20.1495 14.2573 20.1495H8.5173Z"
+                  fill="black" />
+                <path
+                  d="M44.7613 9.57227V17.4923C43.7986 16.9963 42.6506 16.7483 41.3173 16.7483C38.9426 16.7483 37.5253 17.6516 37.0653 19.4583V33.4903H28.7173V9.57227H37.0613V11.6983C38.3713 9.92827 40.2393 9.57227 42.5433 9.57227H44.7613Z"
+                  fill="black" />
+                <path d="M56.0994 9.57227V33.4903H47.7554V9.57227H56.0994Z" fill="black" />
+                <path
+                  d="M75.3392 33.4908L69.4932 24.6208L67.8932 26.4807V33.4968H59.5552V0.71875H67.8992V17.2208L74.5952 9.56675H84.6412L75.5512 19.5067L84.9172 33.4908H75.3392Z"
+                  fill="black" />
+                <path
+                  d="M85.0654 28.8671C85.0506 28.2182 85.1669 27.573 85.4075 26.9702C85.6481 26.3674 86.0079 25.8194 86.4654 25.3591C86.9152 24.8924 87.4569 24.5241 88.0562 24.2772C88.6555 24.0304 89.2994 23.9105 89.9474 23.9251C90.5962 23.9104 91.2414 24.0269 91.8441 24.2675C92.4469 24.508 92.9949 24.8677 93.4554 25.3251C93.9258 25.783 94.296 26.3335 94.5428 26.9417C94.7897 27.55 94.9077 28.2029 94.8894 28.8591C94.9062 29.5189 94.7877 30.1753 94.541 30.7875C94.2944 31.3998 93.9249 31.9551 93.4554 32.4191C92.9999 32.8854 92.4535 33.2535 91.8502 33.5005C91.2468 33.7475 90.5992 33.8681 89.9474 33.8551C89.3056 33.8638 88.6687 33.7411 88.0761 33.4945C87.4835 33.2478 86.9476 32.8825 86.5014 32.4211C86.032 31.9582 85.6624 31.404 85.4154 30.7927C85.1684 30.1815 85.0493 29.5261 85.0654 28.8671V28.8671Z"
+                  fill="black" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+          <div class="hidden md:flex md:space-x-6 mr-6">
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#features" class="text-xs hover:text-gray-700">Features</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#projecten" class="text-xs hover:text-gray-700">Projecten</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#whitepaper" class="text-xs hover:text-gray-700">Whitepaper</a>
+          </div>
+          <span class="inline-flex rounded-md shadow">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')"
+              class="w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Contact opnemen </a>
+          </span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lg:relative">
+    <div class="mx-auto max-w-7xl w-full pt-2 pb-20 text-center lg:text-left">
+      <div class="px-12 mt-12 lg:w-1/2">
+        <h1 class="mt-3 text-4xl leading-8">
+          {{profileH.blockTitle}}
+        </h1>
+        <p class="mt-2 max-w-md mx-auto text-base">{{profileH.blockText}}</p>
+        <div class="mt-2 sm:flex sm:justify-center lg:justify-start">
+          <div class="">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}'
+              class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Download whitepaper </a>
+          </div>
+          <div class="mt-2 sm:mt-0 sm:ml-3">
+            <a data-ls='{"mouseover":[2,2,-2,-2,2], "click":[2,2,-2,-2,3]}' href="#whitepaper"
+              class=" mt-2 w-full inline-flex items-center justify-center bg-gray-200 px-3 py-1 border border-transparent font-medium text-gray-500 bg-white hover:opacity-80 sm:w-auto hover:text-black text-xs border border-gray-500">
+              Meer informatie</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+      {% set image = profileH.blockImage.first() %}
+      {% if image %}
+      {% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+      <img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="absolute inset-0 w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+        src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endfor %}
+
+<!--Spontaan-->
+{% set profilesS = contentBlock.profileS %}
+{% for profileS in profilesS %}
+<div x-show="spontaniousScore > competitiveScore && spontaniousScore > humanisticScore && spontaniousScore > methodicScore && spontaniousScore >= 20" class="relative bg-gray-50">
+  <div class="relative pt-2">
+    <div class="max-w-7xl mx-auto lg:px-12">
+      <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+        <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+              <svg width="95" height="34" viewBox="0 0 95 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.8993 16.6415C22.4586 17.1414 23.8037 18.1525 24.7173 19.5115C25.7087 20.9273 26.2293 22.6192 26.2053 24.3475C26.2053 27.2901 25.2573 29.5488 23.3613 31.1235C21.4653 32.6981 18.7986 33.4868 15.3613 33.4895H0.383301V0.855469H14.3613C17.7973 0.855469 20.4726 1.61747 22.3873 3.14147C24.302 4.66547 25.2586 6.86214 25.2573 9.73147C25.2573 11.4328 24.8406 12.8941 24.0073 14.1155C23.2655 15.2658 22.177 16.1505 20.8993 16.6415V16.6415ZM8.5173 13.7715H13.4073C15.958 13.7715 17.2333 12.7795 17.2333 10.7955C17.2333 8.84747 15.958 7.87281 13.4073 7.87147H8.5173V13.7715ZM8.5173 20.1495V26.4735H14.2573C15.4253 26.4735 16.3373 26.1901 16.9933 25.6235C17.3186 25.3409 17.576 24.9886 17.7464 24.5929C17.9167 24.1971 17.9957 23.768 17.9773 23.3375C17.9773 22.3455 17.6493 21.5661 16.9933 20.9995C16.3373 20.4328 15.4253 20.1495 14.2573 20.1495H8.5173Z"
+                  fill="black" />
+                <path
+                  d="M44.7613 9.57227V17.4923C43.7986 16.9963 42.6506 16.7483 41.3173 16.7483C38.9426 16.7483 37.5253 17.6516 37.0653 19.4583V33.4903H28.7173V9.57227H37.0613V11.6983C38.3713 9.92827 40.2393 9.57227 42.5433 9.57227H44.7613Z"
+                  fill="black" />
+                <path d="M56.0994 9.57227V33.4903H47.7554V9.57227H56.0994Z" fill="black" />
+                <path
+                  d="M75.3392 33.4908L69.4932 24.6208L67.8932 26.4807V33.4968H59.5552V0.71875H67.8992V17.2208L74.5952 9.56675H84.6412L75.5512 19.5067L84.9172 33.4908H75.3392Z"
+                  fill="black" />
+                <path
+                  d="M85.0654 28.8671C85.0506 28.2182 85.1669 27.573 85.4075 26.9702C85.6481 26.3674 86.0079 25.8194 86.4654 25.3591C86.9152 24.8924 87.4569 24.5241 88.0562 24.2772C88.6555 24.0304 89.2994 23.9105 89.9474 23.9251C90.5962 23.9104 91.2414 24.0269 91.8441 24.2675C92.4469 24.508 92.9949 24.8677 93.4554 25.3251C93.9258 25.783 94.296 26.3335 94.5428 26.9417C94.7897 27.55 94.9077 28.2029 94.8894 28.8591C94.9062 29.5189 94.7877 30.1753 94.541 30.7875C94.2944 31.3998 93.9249 31.9551 93.4554 32.4191C92.9999 32.8854 92.4535 33.2535 91.8502 33.5005C91.2468 33.7475 90.5992 33.8681 89.9474 33.8551C89.3056 33.8638 88.6687 33.7411 88.0761 33.4945C87.4835 33.2478 86.9476 32.8825 86.5014 32.4211C86.032 31.9582 85.6624 31.404 85.4154 30.7927C85.1684 30.1815 85.0493 29.5261 85.0654 28.8671V28.8671Z"
+                  fill="black" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+          <div class="hidden md:flex md:space-x-6 mr-6">
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#features" class="text-xs hover:text-gray-700">Features</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#projecten" class="text-xs hover:text-gray-700">Projecten</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#whitepaper" class="text-xs hover:text-gray-700">Whitepaper</a>
+          </div>
+          <span class="inline-flex rounded-md shadow">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')"
+              class="w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Contact opnemen </a>
+          </span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lg:relative">
+    <div class="mx-auto max-w-7xl w-full pt-2 pb-20 text-center lg:text-left">
+      <div class="px-12 mt-16 lg:w-1/2">
+        <div class="mt-8 hover:opacity-80">
+          {% if profileS.highlightedCta and profileS.highlightedCta.url %}
+          <a data-ls='{"mouseover":[1,-1,1,1,-1], "click":[2,-2,2,2,-2]}' href="#whitepaper"
+            class="inline-flex space-x-4"> <span
+              class="rounded bg-gray-200 px-2.5 py-1 text-xs font-semibold text-red-400 tracking-wide"> What's new
+            </span>
+            <span class="inline-flex items-center text-xs font-medium text-red-400 space-x-1">
+              <span>{{ profileS.highlightedCta.text }} </span>
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </a>
+          {% endif %}
+        </div>
+        <h1 class="mt-3 text-4xl leading-8">
+          {{profileS.blockTitle}}
+        </h1>
+        <p class="mt-2 max-w-md mx-auto text-base">{{profileS.blockText}}</p>
+        <div class="mt-2 sm:flex sm:justify-center lg:justify-start">
+          <div class="">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')"
+              class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Download whitepaper </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+      {% set image = profileS.blockImage.first() %}
+      {% if image %}
+      {% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+      <img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="absolute inset-0 w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+        src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endfor %}
+
+<!--Competitief-->
+{% set profilesC = contentBlock.profileC %}
+{% for profileC in profilesC %}
+<div x-show="competitiveScore > humanisticScore && competitiveScore > spontaniousScore && competitiveScore > methodicScore && competitiveScore >= 20" class="relative bg-gray-50">
+  <div class="relative pt-2">
+    <div class="max-w-7xl mx-auto lg:px-12">
+      <nav class="relative flex items-center justify-between sm:h-10 md:justify-center" aria-label="Global">
+        <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+          <div class="flex items-center justify-between w-full md:w-auto">
+            <a href="#">
+              <svg width="95" height="34" viewBox="0 0 95 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.8993 16.6415C22.4586 17.1414 23.8037 18.1525 24.7173 19.5115C25.7087 20.9273 26.2293 22.6192 26.2053 24.3475C26.2053 27.2901 25.2573 29.5488 23.3613 31.1235C21.4653 32.6981 18.7986 33.4868 15.3613 33.4895H0.383301V0.855469H14.3613C17.7973 0.855469 20.4726 1.61747 22.3873 3.14147C24.302 4.66547 25.2586 6.86214 25.2573 9.73147C25.2573 11.4328 24.8406 12.8941 24.0073 14.1155C23.2655 15.2658 22.177 16.1505 20.8993 16.6415V16.6415ZM8.5173 13.7715H13.4073C15.958 13.7715 17.2333 12.7795 17.2333 10.7955C17.2333 8.84747 15.958 7.87281 13.4073 7.87147H8.5173V13.7715ZM8.5173 20.1495V26.4735H14.2573C15.4253 26.4735 16.3373 26.1901 16.9933 25.6235C17.3186 25.3409 17.576 24.9886 17.7464 24.5929C17.9167 24.1971 17.9957 23.768 17.9773 23.3375C17.9773 22.3455 17.6493 21.5661 16.9933 20.9995C16.3373 20.4328 15.4253 20.1495 14.2573 20.1495H8.5173Z"
+                  fill="black" />
+                <path
+                  d="M44.7613 9.57227V17.4923C43.7986 16.9963 42.6506 16.7483 41.3173 16.7483C38.9426 16.7483 37.5253 17.6516 37.0653 19.4583V33.4903H28.7173V9.57227H37.0613V11.6983C38.3713 9.92827 40.2393 9.57227 42.5433 9.57227H44.7613Z"
+                  fill="black" />
+                <path d="M56.0994 9.57227V33.4903H47.7554V9.57227H56.0994Z" fill="black" />
+                <path
+                  d="M75.3392 33.4908L69.4932 24.6208L67.8932 26.4807V33.4968H59.5552V0.71875H67.8992V17.2208L74.5952 9.56675H84.6412L75.5512 19.5067L84.9172 33.4908H75.3392Z"
+                  fill="black" />
+                <path
+                  d="M85.0654 28.8671C85.0506 28.2182 85.1669 27.573 85.4075 26.9702C85.6481 26.3674 86.0079 25.8194 86.4654 25.3591C86.9152 24.8924 87.4569 24.5241 88.0562 24.2772C88.6555 24.0304 89.2994 23.9105 89.9474 23.9251C90.5962 23.9104 91.2414 24.0269 91.8441 24.2675C92.4469 24.508 92.9949 24.8677 93.4554 25.3251C93.9258 25.783 94.296 26.3335 94.5428 26.9417C94.7897 27.55 94.9077 28.2029 94.8894 28.8591C94.9062 29.5189 94.7877 30.1753 94.541 30.7875C94.2944 31.3998 93.9249 31.9551 93.4554 32.4191C92.9999 32.8854 92.4535 33.2535 91.8502 33.5005C91.2468 33.7475 90.5992 33.8681 89.9474 33.8551C89.3056 33.8638 88.6687 33.7411 88.0761 33.4945C87.4835 33.2478 86.9476 32.8825 86.5014 32.4211C86.032 31.9582 85.6624 31.404 85.4154 30.7927C85.1684 30.1815 85.0493 29.5261 85.0654 28.8671V28.8671Z"
+                  fill="black" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
+          <div class="hidden md:flex md:space-x-6 mr-6">
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#features" class="text-xs hover:text-gray-700">Features</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#projecten" class="text-xs hover:text-gray-700">Projecten</a>
+            <a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[2,2,-2,-2,2]}' href="#whitepaper" class="text-xs hover:text-gray-700">Whitepaper</a>
+          </div>
+          <span class="inline-flex rounded-md shadow">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')"
+              class="w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Contact opnemen </a>
+          </span>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="lg:relative">
+    <div class="mx-auto max-w-7xl w-full pt-2 pb-20 text-center lg:text-left">
+      <div class="px-12 lg:w-1/2">
+        <div class="mt-8 hover:opacity-80">
+          {% if profileC.highlightedCta and  profileC.highlightedCta.url %}
+          <a data-ls='{"mouseover":[1,-1,1,1,-1], "click":[2,-2,2,2,-2]}' href="#whitepaper"
+            class="inline-flex space-x-4"> <span
+              class="rounded bg-gray-200 px-2.5 py-1 text-xs font-semibold text-red-400 tracking-wide"> What's new
+            </span>
+            <span class="inline-flex items-center text-xs font-medium text-red-400 space-x-1">
+              <span>{{ profileC.highlightedCta.text }} </span>
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </a>
+          {% endif %}
+        </div>
+        <h1 class="mt-3 text-4xl leading-8">
+          {{profileC.blockTitle}}
+        </h1>
+        <p class="mt-2 max-w-md mx-auto text-base">{{profileC.blockText}}</p>
+        <div class="mt-2 sm:flex sm:justify-center lg:justify-start">
+          <div class="">
+            <a data-ls='{"mouseover":[5,-5,5,5,-5], "click":[15,-15,25,25,-15]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')"
+              class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+              Download whitepaper </a>
+          </div>
+        </div>
+        <p class="mt-4 text-xs text-gray-400 tracking-wide font-semibold">Used by</p>
+        <div class="mt-2 w-full sm:mx-auto sm:max-w-lg lg:ml-0">
+          <div class="flex flex-wrap items-start justify-between">
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple">
+            </div>
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
+                alt="Workcation">
+            </div>
+            <div class="flex justify-center">
+              <img data-ls='{"mouseover":[0,1,0,1,0], "click":[0,0,0,0,0]}' class="h-6 sm:h-7" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+                alt="StaticKit">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+      {% set image = profileC.blockImage.first() %}
+      {% if image %}
+      {% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+      <img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="absolute inset-0 w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw"
+        data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+        srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}"
+        src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endfor %}
+
+{% endfor %}

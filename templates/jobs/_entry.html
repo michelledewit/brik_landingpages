@@ -1,0 +1,174 @@
+{% if craft.request.isAjax %}
+{% set layout = "components/_ajaxLayout" %}
+{% else %}
+{% set layout = "components/_layout" %}
+{% endif %}
+
+{% extends layout %}
+
+{% block content %}
+
+<div class="projectNavigation {% if craft.request.isAjax == false %}open{% endif %} pink">
+    <a {% if craft.request.isAjax == false %}href="/"{% endif %} class="backButton">
+        <svg width="46" height="31" viewBox="0 0 46 31" xmlns="http://www.w3.org/2000/svg"><path fill="#FFF" d="M46 13.563H7.369L18.124 2.732 15.392 0 0 15.5 15.392 31l2.712-2.732L7.37 17.438H46z" fill-rule="evenodd"/></svg>
+    </a>
+</div>
+<div class="detailContentContainer black pink">
+
+    <header class="detail contentDetail">
+        <div class="navBarContainer">
+            <div class="grid-x grid-padding-x align-middle">
+                <div class="cell small-12 large-4">
+                    <a {% if craft.request.isAjax == false %}href="/"{% endif %} class="backButton">
+                        <svg class="logo" width="219" height="82" viewbox="0 0 219 82" preserveAspectRatio="xMinYMin meet">
+                            <path  class="name-tag" fill="#FFF" stroke="#FFF" stroke-miterlimit="10" d="M48.156,41.64 C51.812,42.807 54.804,45.057 57.131,48.39 C59.457,51.724 60.621,55.516 60.621,59.766 C60.621,66.682 58.398,71.995 53.952,75.703 C49.506,79.411 43.253,81.266 35.192,81.266 L0.043,81.266 L0.043,4.516 L32.826,4.516 C40.886,4.516 47.16,6.307 51.647,9.891 C56.134,13.474 58.378,18.641 58.378,25.391 C58.378,29.391 57.402,32.828 55.448,35.703 C53.496,38.578 51.065,40.557 48.157,41.641 L48.156,41.64 Z M19.114,34.89 L30.58,34.89 C36.563,34.89 39.554,32.557 39.554,27.89 C39.554,23.307 36.563,21.016 30.58,21.016 L19.114,21.016 L19.114,34.89 Z M19.114,49.89 L19.114,64.766 L32.575,64.766 C35.318,64.766 37.457,64.099 38.995,62.766 C40.532,61.432 41.301,59.641 41.301,57.391 C41.301,55.057 40.531,53.224 38.995,51.891 C37.457,50.557 35.318,49.891 32.575,49.891 L19.114,49.891 L19.114,49.89 Z M104.122,43.64 C101.878,42.474 99.178,41.89 96.02,41.89 C90.453,41.89 87.129,44.016 86.048,48.266 L86.048,81.266 L66.48,81.266 L66.48,25.016 L86.05,25.016 L86.05,30.016 C89.124,25.849 93.362,25.141 98.763,25.141 C101.173,25.141 103.810819,25.8440117 104.123,26.141 C104.33112,26.3389922 104.330787,32.1719922 104.122,43.64 Z M129.052,25.016 L129.052,81.266 L109.482,81.266 L109.482,25.016 L129.052,25.016 Z M174.173,81.266 L160.462,60.39 L156.722,64.765 L156.722,81.265 L137.153,81.265 L137.153,0.016 L156.723,0.016 L156.723,43.016 L172.428,25.016 L195.986,25.016 L174.672,48.39 L196.609,81.265 L174.173,81.265 L174.173,81.266 Z M196.983,70.391 C196.983,67.141 198.084,64.391 200.286,62.141 C202.488,59.891 205.21,58.766 208.451,58.766 C211.691,58.766 214.434,59.87 216.677,62.078 C218.921,64.286 220.043,67.058 220.043,70.391 C220.043,73.724 218.921,76.516 216.677,78.766 C214.434,81.016 211.691,82.141 208.451,82.141 C205.293,82.141 202.592,81.016 200.349,78.766 C198.105,76.516 196.983,73.724 196.983,70.391 Z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="cell large-8">
+                    <div class="detailMenuContainer">
+                        {# include '/components/_pagesMenu' #}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="content text">
+        <div class="grid-x grid-padding-x">
+            <div class="cell small-12 xlarge-10">
+                <h1><span class="client">Werken bij Brik als </span>{{ entry.title }}</h1>
+            </div>
+            <div class="cell small-12 xlarge-10 xxlarge-8">
+                {{ entry.intro }}
+            </div>
+        </div>
+    </div>
+
+    {% include '/components/_contentBlocks' %}
+
+    {#
+    <div class="content text">
+        <form action="{{ entry.getUrl() }}" autocomplete="off" method="post" enctype="multipart/form-data" class="ajaxForm" novalidate>
+            <div class="formContainer">
+                {{ csrfInput() }}
+                <input type="hidden" name="{{ craft.snaptcha.fieldName }}" value="{{ craft.snaptcha.fieldValue }}">
+                <input type="hidden" name="action" value="contact-form/send">
+                <input type="hidden" name="subject" value="Sollicitatie vacature: {{ entry.title }}">
+                <input type="hidden" name="toEmail" value="{{ 'vacatures@brik.digital'|hash }}">
+                <div class="grid-x grid-padding-x">
+                    <div class="cell small-12 xlarge-10 xxlarge-8">
+                        <h3>Solliciteer direct</h3>
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-6 cell">
+                                <div class="form-group floatingLabel">
+                                    <input type="text" name="fromName" id="fromName" required>
+                                    <label for="fromName">Naam</label>
+                                </div>
+                            </div>
+                            <div class="medium-6 cell">
+                                <div class="form-group floatingLabel">
+                                    <input type="email" name="fromEmail" id="fromEmail" required>
+                                    <label for="fromEmail">E-mailadres</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-6 cell">
+                                <div class="form-group floatingLabel">
+                                    <input type="text" name="message[Telefoonummer]" id="phone">
+                                    <label for="phone">Telefoonnummer</label>
+                                </div>
+                            </div>
+                            <div class="medium-6 cell">
+                                <div class="form-group floatingLabel">
+                                    <input type="text" name="message[Woonplaats]" id="city">
+                                    <label for="city">Woonplaats</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-12 cell">
+                                <br />
+                                <input type="file" name="attachment" id="cvUpload" class="show-for-sr"><label for="cvUpload" class="button small fileUpload">Selecteer je CV</label>
+                            </div>
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-12 cell">
+                                <div class="form-group floatingLabel">
+                                    <textarea id="message" name="message[body]" required></textarea>
+                                    <label for="message">Motivatie</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-x grid-padding-x">
+                            <div class="medium-12 cell">
+                                <br />
+                                <button type="submit" class="button small">Verstuur je sollicitatie</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="succesMessage">
+                <div class="grid-x grid-padding-x">
+                    <div class="cell small-12 xlarge-10 xxlarge-8">
+                        <h3>Bedankt voor je bericht</h3>
+                        <p>Je sollicitatie is succesvol verstuurd. Wij zullen zo spoedig mogelijk contact met je opnemen.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    #}
+
+    {% if entry.employee|length > 0 %}
+    {% set employee = entry.employee.first() %}
+    {% set image = employee.mainImage.first() %}
+
+    <div class="content meetus">
+        <div class="grid-x grid-padding-x">
+            <div class="cell small-12">
+                <h2>Kennismaken?</h2>
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x align-middle">
+            <div class="cell small-4 xlarge-2">
+                {% set miniImage = craft.imager.transformImage(image, {
+                width: 300,
+                height: 300,
+                mode: 'fit',
+                jpegQuality: 95 }) %}
+                {% set dominantColor = craft.imager.getDominantColor(miniImage) %}
+
+                {% set transformedImages = craft.imager.transformImage(image, [
+                { width: 400 },
+                { width: 100 }
+                ], {ratio: 1/1, position: image.getFocalPoint() },
+                { fillTransforms: true }) %}
+                <img sizes="20vw"
+                     class="lazyload"
+                     data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+                     srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight(), color:dominantColor }) }}"
+                     src="{{ transformedImages[0].url }}"
+                     alt="{{ image.title }}">
+            </div>
+            <div class="cell small-8 xlarge-8">
+                <p>Bel of mail {{ employee.title }}</p>
+                {% for contactLink in employee.links %}
+                <a href="{{ contactLink.pageLink.url }}" target="{{ contactLink.pageLink.target }}" class="contactLink">{{ contactLink.pageLink.text }}</a>
+                {% endfor %}
+                {% if employee.linkedInUrl %}
+                <br />
+                <a href="{{ employee.linkedInUrl }}" class="socialLink"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M409.391 511.359V317.203s-5.75-51.938-56-51.938c-50.219 0-59.406 49.375-59.406 49.375v196.719h-103.5l1.688-320.719h100.125l-.813 40.313s20.876-52.688 99.531-52.688c78.625 0 114.25 45.188 120.875 129.688v203.406h-102.5zM63.547 145.078c-35.563 0-64.438-25.438-64.438-56.875s28.875-56.938 64.438-56.938 64.438 25.5 64.438 56.938-28.876 56.875-64.438 56.875zm63.875 366.656H.172V191.453l127.25-.813v321.094z"/></svg> Bekijk profiel</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endblock %}

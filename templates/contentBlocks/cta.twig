@@ -1,0 +1,108 @@
+{# {% include '_macros/cookies.twig' %} #}
+
+<!-- Methodisch-->
+{% set profilesM = contentBlock.profileM.all() %}
+	{% for profileM in profilesM %}
+		<div x-show="methodicScore > competitiveScore && methodicScore > spontaniousScore && methodicScore > humanisticScore && methodicScore >= 20" class="mb-16 mt-8"> <div class="mx-auto text-center py-6 px-4 sm:px-6 lg:px-8 bg-gray-200">
+			<div class="text-3xl text-black">
+				{{profileM.blockTitle}}
+			</div>
+			<div class="flex justify-center">
+				<p class="mt-1 text-base w-3/4 leading-6 text-black">{{profileM.blockText}}</p>
+			</div>
+			{% if profileM.blockLink and profileM.blockLink.url %}
+				<a data-ls='{"mouseover":[5,5,-2,-2,5], "click":[15,10,-5,-5,10]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')" class=" mt-4 w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-white hover:opacity-80 hover:text-black sm:w-auto text-sm">
+					{{ profileM.blockLink.text }}
+				</a>
+			{% endif %}
+		</div>
+	</div>
+{% endfor %}
+
+<!-- Spontaan-->
+{% set profilesS = contentBlock.profileS.all() %}
+<div x-show="spontaniousScore >= competitiveScore && spontaniousScore >=  humanisticScore && spontaniousScore >= methodicScore || humanisticScore < 20 && competitiveScore < 20 && methodicScore < 20">
+	{% for profileS in profilesS %}
+		<div class="relative bg-gray-200 my-8">
+			<div class="h-56 md:absolute md:left-0 md:h-full md:w-1/2">
+				{% set image = profileS.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+			<div class="relative max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+				<div class="md:ml-auto md:w-1/2 md:pl-10">
+					<p class="text-black text-3xl tracking-tight">{{profileS.blockTitle}}</p>
+					<p class="mt-2 max-w-3xl text-sm text-black">{{profileS.blockText}}</p>
+					<div class="mt-4">
+						<div class="inline-flex rounded-md">
+							{% if profileS.blockLink and profileS.blockLink.url %}
+								<a data-ls='{"mouseover":[5,5,-2,-2,5], "click":[15,10,-5,-5,10]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-white hover:opacity-80 hover:text-black sm:w-auto text-sm">
+									{{ profileS.blockLink.text }}
+								</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+<!-- Competitief-->
+{% set profilesC = contentBlock.profileC.all() %}
+{% for profileC in profilesC %}
+	<div x-show="competitiveScore > humanisticScore && competitiveScore > spontaniousScore && competitiveScore > methodicScore && competitiveScore >= 20" class="mb-12 mt-16">
+		<div class="mx-auto text-center py-6 px-4 sm:px-6 lg:px-8 bg-gray-100">
+			<div class="text-3xl text-black">
+				{{profileC.blockTitle}}
+			</div>
+			<p class="mt-1 text-lg leading-6 text-black">{{profileC.blockText}}</p>
+			{% if profileC.blockLink and profileC.blockLink.url %}
+				<a data-ls='{"mouseover":[5,5,-2,-2,5], "click":[15,10,-5,-5,10]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')" class=" mt-4 w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-white hover:opacity-80 hover:text-black sm:w-auto text-sm">
+					{{ profileC.blockLink.text }}
+				</a>
+			{% endif %}
+		</div>
+	</div>
+	{% endfor %}
+
+	<!-- Humanistisch-->
+	{% set profilesH = contentBlock.profileH.all() %}
+	<div x-show="humanisticScore > competitiveScore && humanisticScore > spontaniousScore && humanisticScore > methodicScore && humanisticScore >= 20" class="profileH">
+		{% for profileH in profilesH %}
+			<div class="relative bg-gray-200 my-8">
+				<div class="h-56 md:absolute md:left-0 md:h-full md:w-1/2">
+					{% set image = profileH.blockImage.first() %}
+					{% if image %}
+						{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+						<img data-ls='{"mouseover":[0,0,1,0,1], "click":[0,0,0,0,0]}' class="w-full h-full object-cover lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+					{% endif %}
+				</div>
+				<div class="relative max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+					<div class="md:ml-auto md:w-1/2 md:pl-10">
+						<p class="text-black text-3xl leading-7 tracking-tight w-2/3">{{profileH.blockTitle}}</p>
+						<p class="mt-2 max-w-3xl text-sm text-black">{{profileH.blockText}}</p>
+						<div class="mt-4">
+							<div class="inline-flex rounded-md">
+								{% if profileH.blockLink and profileH.blockLink.url %}
+									<a data-ls='{"mouseover":[5,5,-2,-2,5], "click":[15,10,-5,-5,10]}' onclick="ml_account('webforms', '5697559', 'v9l3j9', 'show')" class="w-full inline-flex items-center justify-center px-5 py-1 border border-transparent font-medium text-black bg-white hover:opacity-80 hover:text-black sm:w-auto text-sm">
+										{{ profileH.blockLink.text }}
+									</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>

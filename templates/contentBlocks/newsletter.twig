@@ -1,0 +1,23 @@
+<div x-show="humanisticScore > competitiveScore && humanisticScore > spontaniousScore && humanisticScore > methodicScore && humanisticScore >= 20 || methodicScore > competitiveScore && methodicScore > spontaniousScore && methodicScore > humanisticScore && methodicScore >= 20 || spontaniousScore < 20 && competitiveScore < 20 && methodicScore < 20" class="bg-gray-200 my-8">
+	<div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-12 lg:flex flex-row lg:items-center">
+		<div class="lg:w-0 lg:flex-1 w-1/2">
+			<h2 class="text-3xl">{{contentBlock.blockTitle}}</h2>
+			<p class="mt-1 max-w-3xl text-sm">{{contentBlock.blockText}}</p>
+		</div>
+		<div class="mt-8 lg:mt-0 w-1/2">
+			<div class="sm:flex flex-row mt-2">
+				<div class="lg:ml-3">
+					<a data-ls='{"mouseover":[5,5,-5,-5,5], "click":[15,10,-5,-5,10]}' onclick="ml_account('webforms', '5673804', 'x9u0i7', 'show')" class="inline-flex my-1 items-center mr-2 justify-center border border-gray-500 px-8 py-0.5 font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+						Aanmelden
+					</a>
+				</div>
+			<p class="text-xs ml-3">
+				Je gegevens zijn veilig, lees meer in onze
+				<a data-ls='{"mouseover":[1,1,-1,-1,1], "click":[0,0,0,0,0]}' class="underline hover:text-black">
+					Privacy Policy.
+				</a>
+			</p>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,185 @@
+<!-- methodisch -->
+{% set features = contentBlock.profileM.featureOverview.all() %}
+<div id="whitepaper" x-show="methodicScore >= competitiveScore && methodicScore >= spontaniousScore && methodicScore >= humanisticScore || spontaniousScore < 20 && competitiveScore < 20 && humanisticScore < 5 " class="py-12 overflow-hidden">
+	<div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-12 lg:max-w-7xl">
+		<div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+			<div class="relative">
+				<h3 class="text-3xl">{{contentBlock.profileM.blockTitle}}</h3>
+				<p class="mt-1 text-sm">{{contentBlock.profileM.blockText}}</p>
+				<div class="mt-3 space-y-4">
+					{% for feature in features %}
+						<div class="relative">
+							<svg class="absolute h-6 w-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+							</svg>
+							<p class="ml-8 text-sm leading-6 ">{{feature.featureTitle}}</p>
+							<div class="ml-8 text-xs">{{feature.featureText}}</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="mt-3 sm:flex sm:justify-center lg:justify-start">
+					<div class="" id="ctaButton" onclick="test()">
+						<a data-ls='{"mouseover":[5,2,-2,-2,2], "click":[15,5,-5,-5,5]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+							Download whitepaper
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+				{% set image = contentBlock.profileM.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[1,-1,1,-1,1], "click":[0,0,0,0,0]}' class="relative mx-auto lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Competitief -->
+{% set features = contentBlock.profileC.featureOverview.all() %}
+<div id="whitepaper" x-show="competitiveScore > humanisticScore && competitiveScore > spontaniousScore && competitiveScore > methodicScore && competitiveScore >= 20" class="py-12 overflow-hidden">
+	<div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-12 lg:max-w-7xl">
+		<div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+			<div class="relative">
+				<h3 class="text-4xl leading-8">{{contentBlock.profileC.blockTitle}}</h3>
+				<div class="mt-3 space-y-4">
+					{% for feature in features %}
+						<div class="relative">
+							<svg class="absolute h-6 w-6 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+							</svg>
+							<p class="ml-8 text-sm leading-6 ">{{feature.featureTitle}}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="mt-3 sm:flex sm:justify-center lg:justify-start">
+					<div class="" id="ctaButton" onclick="test()">
+						<a data-ls='{"mouseover":[5,2,-2,-2,2], "click":[15,5,-5,-5,5]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" class=" mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+							Download whitepaper
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+				{% set image = contentBlock.profileC.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[1,-1,1,-1,1], "click":[0,0,0,0,0]}' class="relative mx-auto lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Spontaan -->
+{% set features = contentBlock.profileS.featureOverview.all() %}
+<div id="whitepaper" x-show="spontaniousScore > competitiveScore && spontaniousScore > humanisticScore && spontaniousScore > methodicScore && spontaniousScore >= 20"  class="py-12 overflow-hidden">
+	<div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-12 lg:max-w-7xl">
+		<div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+			<div class="relative">
+				<h3 class="text-4xl">{{contentBlock.profileS.blockTitle}}</h3>
+				<div class="mt-6 space-y-4">
+					{% for feature in features %}
+						<div class="relative">
+							<div class="absolute flex items-center justify-center h-6 w-6 rounded-md bg-red-400 text-white">
+								{% if feature.img == "persoonlijk" %}
+									<svg class="h-4 w-4 ml-1 mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10 11C12.7614 11 15 8.76142 15 6C15 3.23858 12.7614 1 10 1C7.23858 1 5 3.23858 5 6C5 8.76142 7.23858 11 10 11Z" stroke="white" stroke-width="2"/>
+										<path d="M15.0001 13H15.3521C16.0831 13.0002 16.789 13.2674 17.337 13.7513C17.885 14.2352 18.2374 14.9026 18.3281 15.628L18.7191 18.752C18.7542 19.0334 18.7291 19.3191 18.6455 19.5901C18.5618 19.8611 18.4214 20.1112 18.2337 20.3238C18.046 20.5364 17.8152 20.7066 17.5566 20.8232C17.2981 20.9398 17.0177 21.0001 16.7341 21H3.26606C2.98244 21.0001 2.70206 20.9398 2.44351 20.8232C2.18496 20.7066 1.95416 20.5364 1.76644 20.3238C1.57871 20.1112 1.43835 19.8611 1.35467 19.5901C1.27098 19.3191 1.24589 19.0334 1.28106 18.752L1.67106 15.628C1.76176 14.9022 2.11448 14.2346 2.66289 13.7506C3.21131 13.2667 3.91764 12.9997 4.64906 13H5.00006" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								{% elseif feature.img == "veilig" %}
+									<svg class="h-4 w-4 ml-1 mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0111 3.31387L10.3834 0.373633C10.2793 0.338086 10.1396 0.320312 10 0.320312C9.86035 0.320312 9.7207 0.338086 9.6166 0.373633L0.988867 3.31387C0.778125 3.38496 0.605469 3.62871 0.605469 3.85215V16.1006C0.605469 16.324 0.750195 16.6186 0.925391 16.7582L9.67754 23.5781C9.76641 23.6467 9.88066 23.6822 9.99746 23.6822C10.1143 23.6822 10.2311 23.6467 10.3174 23.5781L19.0695 16.7582C19.2447 16.6211 19.3895 16.3266 19.3895 16.1006V3.85215C19.3945 3.62871 19.2219 3.3875 19.0111 3.31387V3.31387ZM17.5664 15.6131L10 21.5088L2.43359 15.6131V4.75605L10 2.17637L17.5664 4.75605V15.6131ZM7.26289 10.5096C7.18672 10.4055 7.06484 10.342 6.93281 10.342H5.53125C5.36621 10.342 5.26973 10.5299 5.36621 10.6645L8.57559 15.0824C8.61353 15.1344 8.66321 15.1766 8.72056 15.2057C8.77792 15.2349 8.84134 15.2501 8.90566 15.2501C8.96999 15.2501 9.03341 15.2349 9.09077 15.2057C9.14812 15.1766 9.19779 15.1344 9.23574 15.0824L14.6338 7.65059C14.7303 7.51602 14.6338 7.32812 14.4688 7.32812H13.0672C12.9377 7.32812 12.8133 7.3916 12.7371 7.4957L8.90566 12.7719L7.26289 10.5096Z" fill="white"/>
+									</svg>
+								{% elseif feature.img == "hoger" %}
+									<svg fill="none" class="h-5 w-5 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"><path d="m1 8.00098 7-7 7 7m-7 9.00002v-16.00002z" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+								{% endif %}
+							</div>
+							<p class="ml-8 text-sm leading-6 ">{{feature.featureTitle}}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="mt-4 sm:flex sm:justify-center lg:justify-start">
+					<div class="" id="ctaButton" onclick="test()">
+						<a data-ls='{"mouseover":[5,2,-2,-2,2], "click":[15,5,-5,-5,5]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" class="mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+							Ik wil de whitepaper downloaden
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+				{% set image = contentBlock.profileS.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[1,-1,1,-1,1], "click":[0,0,0,0,0]}' class="relative mx-auto lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- humanistisch -->
+{% set features = contentBlock.profileH.featureOverview.all() %}
+<div id="whitepaper" x-show="humanisticScore > competitiveScore && humanisticScore > spontaniousScore && humanisticScore > methodicScore && humanisticScore >= 20" class="py-12 overflow-hidden">
+	<div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-12 lg:max-w-7xl">
+		<div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+			<div class="relative">
+				<h3 class="text-3xl">{{contentBlock.profileH.blockTitle}}</h3>
+				<p class="mt-1 text-sm">{{contentBlock.profileH.blockText}}</p>
+				<div class="mt-6 space-y-4">
+					{% for feature in features %}
+						<div class="relative">
+							<div class="absolute flex items-center justify-center h-6 w-6 rounded-md bg-red-400 text-white">
+								{% if feature.img == "persoonlijk" %}
+									<svg class="h-4 w-4 ml-1 mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M10 11C12.7614 11 15 8.76142 15 6C15 3.23858 12.7614 1 10 1C7.23858 1 5 3.23858 5 6C5 8.76142 7.23858 11 10 11Z" stroke="white" stroke-width="2"/>
+										<path d="M15.0001 13H15.3521C16.0831 13.0002 16.789 13.2674 17.337 13.7513C17.885 14.2352 18.2374 14.9026 18.3281 15.628L18.7191 18.752C18.7542 19.0334 18.7291 19.3191 18.6455 19.5901C18.5618 19.8611 18.4214 20.1112 18.2337 20.3238C18.046 20.5364 17.8152 20.7066 17.5566 20.8232C17.2981 20.9398 17.0177 21.0001 16.7341 21H3.26606C2.98244 21.0001 2.70206 20.9398 2.44351 20.8232C2.18496 20.7066 1.95416 20.5364 1.76644 20.3238C1.57871 20.1112 1.43835 19.8611 1.35467 19.5901C1.27098 19.3191 1.24589 19.0334 1.28106 18.752L1.67106 15.628C1.76176 14.9022 2.11448 14.2346 2.66289 13.7506C3.21131 13.2667 3.91764 12.9997 4.64906 13H5.00006" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									</svg>
+								{% elseif feature.img == "veilig" %}
+									<svg class="h-4 w-4 ml-1 mt-0.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M19.0111 3.31387L10.3834 0.373633C10.2793 0.338086 10.1396 0.320312 10 0.320312C9.86035 0.320312 9.7207 0.338086 9.6166 0.373633L0.988867 3.31387C0.778125 3.38496 0.605469 3.62871 0.605469 3.85215V16.1006C0.605469 16.324 0.750195 16.6186 0.925391 16.7582L9.67754 23.5781C9.76641 23.6467 9.88066 23.6822 9.99746 23.6822C10.1143 23.6822 10.2311 23.6467 10.3174 23.5781L19.0695 16.7582C19.2447 16.6211 19.3895 16.3266 19.3895 16.1006V3.85215C19.3945 3.62871 19.2219 3.3875 19.0111 3.31387V3.31387ZM17.5664 15.6131L10 21.5088L2.43359 15.6131V4.75605L10 2.17637L17.5664 4.75605V15.6131ZM7.26289 10.5096C7.18672 10.4055 7.06484 10.342 6.93281 10.342H5.53125C5.36621 10.342 5.26973 10.5299 5.36621 10.6645L8.57559 15.0824C8.61353 15.1344 8.66321 15.1766 8.72056 15.2057C8.77792 15.2349 8.84134 15.2501 8.90566 15.2501C8.96999 15.2501 9.03341 15.2349 9.09077 15.2057C9.14812 15.1766 9.19779 15.1344 9.23574 15.0824L14.6338 7.65059C14.7303 7.51602 14.6338 7.32812 14.4688 7.32812H13.0672C12.9377 7.32812 12.8133 7.3916 12.7371 7.4957L8.90566 12.7719L7.26289 10.5096Z" fill="white"/>
+									</svg>
+								{% elseif feature.img == "hoger" %}
+									<svg fill="none" class="h-5 w-5 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"><path d="m1 8.00098 7-7 7 7m-7 9.00002v-16.00002z" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+								{% endif %}
+							</div>
+							<p class="ml-8 text-sm leading-6 ">{{feature.featureTitle}}</p>
+							<div class="ml-8 text-xs">{{feature.featureText}}</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="mt-2 sm:flex sm:justify-center lg:justify-start">
+					<div class="" id="ctaButton" onclick="test()">
+						<a data-ls='{"mouseover":[5,2,-2,-2,2], "click":[15,5,-5,-5,5]}' onclick="ml_account('webforms', '5672868', 'x1r2f4', 'show')" class=" mt-2 w-full inline-flex items-center justify-center px-3 py-1 border border-transparent font-medium text-white bg-gray-500 hover:opacity-80 sm:w-auto text-xs">
+							Ik wil de whitepaper downloaden
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+				{% set image = contentBlock.profileH.blockImage.first() %}
+				{% if image %}
+					{% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 380 }
+              ], {mode: 'fit'},
+              { fillTransforms: true }) %}
+					<img data-ls='{"mouseover":[1,-1,1,-1,1], "click":[0,0,0,0,0]}' class="relative mx-auto lazyload" sizes="(max-width: 639px) 100vw, 50vw" data-srcset="{{ craft.imager.srcset(transformedImages) }}" srcset="{{ craft.imager.placeholder({ width: transformedImages[0].getWidth(), height: transformedImages[0].getHeight() }) }}" src="{{ transformedImages[0].url }}" alt="{{ image.title }}">
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
