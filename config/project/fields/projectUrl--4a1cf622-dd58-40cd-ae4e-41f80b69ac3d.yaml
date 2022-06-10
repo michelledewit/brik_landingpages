@@ -1,0 +1,9 @@
+contentColumnType: string(255)
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: projectUrl
+instructions: ''
+name: 'Project url'
+searchable: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

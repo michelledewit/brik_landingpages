@@ -1,0 +1,8 @@
+baseUrl: 'https://brik.digital'
+handle: default
+hasUrls: true
+language: nl
+name: Brik
+primary: true
+siteGroup: c6a81f15-1ad8-44ed-b868-eb8d7c884e59
+sortOrder: 1

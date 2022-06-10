@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: projects
+name: Projecten
+previewTargets:
+  -
+    label: 'Primaire invoer-pagina'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  b3528ed7-d45e-4ed6-8279-c6d3463caa6d:
+    enabledByDefault: true
+    hasUrls: true
+    template: projects/_entry
+    uriFormat: 'projecten/{slug}'
+structure:
+  maxLevels: null
+  uid: 300b8331-ab87-4f2d-a222-95499636fb2a
+type: structure

@@ -1,0 +1,110 @@
+field: 9a03b352-46f3-4f7e-943f-8950208a5dbc
+fieldLayouts:
+  4d0c5ad8-6de3-4965-b3f1-13015d35443b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5e97797a-7890-44c2-befd-2bd56a6363c6
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b0589645-2a8f-4a8d-a7e1-d250bbe9c427
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6da6405f-b7e1-426c-94ff-5c78fbeb71a4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5e97797a-7890-44c2-befd-2bd56a6363c6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockName
+    instructions: ''
+    name: Naam
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6da6405f-b7e1-426c-94ff-5c78fbeb71a4:
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockImage
+    instructions: ''
+    name: Afbeelding
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b0589645-2a8f-4a8d-a7e1-d250bbe9c427:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockFunction
+    instructions: ''
+    name: Functie
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: member
+name: Teamlid
+sortOrder: 1

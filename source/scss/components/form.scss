@@ -1,0 +1,106 @@
+.floatingLabel {
+  position: relative;
+  margin-top: 1rem;
+
+  &:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-color: $white;
+    transition: width 0.3s cubic-bezier(0, 1.1, .84, 1);
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+    top: 0.14rem;
+    opacity: 0.5;
+    transition: top 0.3s cubic-bezier(0, 1.1, .84, 1), font-size 0.3s cubic-bezier(0, 1.1, .84, 1), opacity 0.3s cubic-bezier(0, 1.1, .84, 1), color 0.3s cubic-bezier(0, 1.1, .84, 1);
+    z-index: 1;
+  }
+
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+    border: none;
+    border-bottom: 1px dotted#FFF;
+    position: relative;
+    font-size: 1rem;
+    color: #FFF;
+    padding: 1rem 1rem 0.9rem 0;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0;
+  }
+  textarea {
+    min-height: 2rem;
+    max-height: 50vh;
+    overflow: visible;
+    resize: none;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  &.hasValue {
+    label {
+      font-size: 0.7rem;
+      //color: $primary-color !important;
+      top: -0.6rem;
+      z-index: 3;
+      opacity: 0.2;
+    }
+  }
+
+  &.hasFocus {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  .pristine-error {
+    color: $alert-color;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    transform: translateY(100%);
+  }
+}
+
+.button.fileUpload {
+  margin-bottom: 0;
+}
+
+.button.loading {
+  background-image: url({path.images}/loader.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+
+form.ajaxForm {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: inherit;
+    border-bottom: 1px dotted $white;
+    -webkit-text-fill-color: $white;
+    -webkit-box-shadow: 0 0 0 30px $black inset;
+  }
+}
+
+.succesMessage {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0, 1.1, .84, 1);
+}

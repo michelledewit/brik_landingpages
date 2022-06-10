@@ -1,0 +1,11 @@
+contentColumnType: boolean
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: hideInMenu
+instructions: ''
+name: 'Verberg voor menu'
+searchable: true
+settings:
+  default: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

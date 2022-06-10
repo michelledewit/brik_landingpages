@@ -1,0 +1,68 @@
+field: dafd407b-c8ac-4e3c-8929-136d3e9adb73
+fieldLayouts:
+  6a470db8-8a06-4341-a82f-39f3e7bcbe02:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4a2d7046-04dd-41c4-a532-353b38e8decb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 03f36f23-4dea-4cd3-a1a1-b915ba901cb9
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  03f36f23-4dea-4cd3-a1a1-b915ba901cb9:
+    contentColumnType: text
+    fieldGroup: null
+    handle: img
+    instructions: ''
+    name: Afb
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4a2d7046-04dd-41c4-a532-353b38e8decb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: featureTitle
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: features
+name: Features
+sortOrder: 1

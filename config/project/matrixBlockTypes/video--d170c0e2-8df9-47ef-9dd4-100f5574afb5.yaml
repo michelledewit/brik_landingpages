@@ -1,0 +1,25 @@
+field: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+fieldLayouts:
+  fb17c866-a16a-43ee-8acd-a322109073b0:
+    tabs:
+      -
+        fields:
+          1c248e97-ce85-4329-9714-5eab6f546869:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  1c248e97-ce85-4329-9714-5eab6f546869:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: videoUrl
+    instructions: ''
+    name: 'Video url'
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: video
+name: Video
+sortOrder: 4

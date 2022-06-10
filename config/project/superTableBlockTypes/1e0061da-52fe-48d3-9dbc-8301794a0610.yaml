@@ -1,0 +1,61 @@
+field: 19fb440c-f0b1-4333-8e94-57c79d09c8c4
+fieldLayouts:
+  6c3278ae-56c3-42ae-b4eb-ae61f1228ac9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b8bd4c31-55b8-4ed9-b2fb-111e555a097b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 61ca34c4-5be3-47ef-a08a-a37da3ded706
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  61ca34c4-5be3-47ef-a08a-a37da3ded706:
+    contentColumnType: string
+    fieldGroup: null
+    handle: testimonialOverview
+    instructions: ''
+    name: 'Testimonial overzicht'
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_testimonialoverview_1}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  b8bd4c31-55b8-4ed9-b2fb-111e555a097b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

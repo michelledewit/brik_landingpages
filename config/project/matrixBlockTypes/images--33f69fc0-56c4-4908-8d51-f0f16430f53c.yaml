@@ -1,0 +1,41 @@
+field: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+fieldLayouts:
+  8868dd77-b398-42f8-90f1-7e1c7b54a3b8:
+    tabs:
+      -
+        fields:
+          2cfd8fa9-8aa5-4774-8eef-aa92ac6b1c9c:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  2cfd8fa9-8aa5-4774-8eef-aa92ac6b1c9c:
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: 'Als er meerdere afbeeldingen worden gekozen zal dit blok automatisch een slider worden.'
+    name: Afbeeldingen
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Kies afbeelding(en)'
+      singleUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: images
+name: Afbeelding(en)
+sortOrder: 3

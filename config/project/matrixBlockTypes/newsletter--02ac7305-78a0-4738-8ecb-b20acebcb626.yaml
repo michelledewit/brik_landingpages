@@ -1,0 +1,68 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  bf423659-273d-463a-9a45-72f643926461:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: f524a925-1957-41a6-823e-fd5fde689260
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 78951895-ed1a-499a-8b1e-03308001a0b2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  78951895-ed1a-499a-8b1e-03308001a0b2:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockText
+    instructions: ''
+    name: Tekst
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f524a925-1957-41a6-823e-fd5fde689260:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockTitle
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: newsletter
+name: Nieuwsbrief
+sortOrder: 9

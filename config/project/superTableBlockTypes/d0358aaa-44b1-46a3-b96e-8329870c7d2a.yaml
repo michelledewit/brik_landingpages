@@ -1,0 +1,89 @@
+field: 724bec9f-bbb5-437f-8aa3-f4001c2dc6ae
+fieldLayouts:
+  3412aa20-b867-457f-9b1e-1c449755e970:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 4fcc6ca9-31d9-4419-baa6-fa9820fae73f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2d3f6220-b521-4e66-9078-fd989345f505
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e7fa0b26-ba05-46a8-983a-f3415248269e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2d3f6220-b521-4e66-9078-fd989345f505:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtssubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4fcc6ca9-31d9-4419-baa6-fa9820fae73f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e7fa0b26-ba05-46a8-983a-f3415248269e:
+    contentColumnType: string
+    fieldGroup: null
+    handle: featureOverview
+    instructions: ''
+    name: Featureoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_featureoverview}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

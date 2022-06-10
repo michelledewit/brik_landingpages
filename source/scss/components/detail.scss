@@ -1,0 +1,517 @@
+.detailContentContainer {
+  position: fixed;
+  @include overlayContentWidth();
+
+  background-color: $white;
+  height: 100vh;
+  overflow: auto;
+  overflow-x: hidden;
+  right: 0;
+  z-index: 1;
+  top: 0;
+
+  @include breakpoint(small only) {
+    height: calc(100% - 2.5rem);
+  }
+
+  &.black {
+    background-color: $black;
+    &, p, h1,h2,h3 {
+      color: $white;
+
+      a {
+        color: $primary-color;
+
+        &:hover {
+          color: darken($primary-color, 20%);
+        }
+      }
+    }
+
+    form {
+      label {
+        color: $white;
+      }
+    }
+  }
+}
+
+.projectNavigation {
+  position: fixed;
+  width: 0;
+  height: 100vh;
+  z-index: -1;
+  left: 0;
+  overflow: hidden;
+  transition: width 0.4s ease-in-out;
+  //will-change: width;
+
+  @include breakpoint(small only) {
+    width: 100vw;
+    height: 2.5rem;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  &.open {
+    width: 2.5rem;
+    @include breakpoint(large down) {
+      width: 2rem;
+    }
+    @include breakpoint(small only) {
+      width: 100vw;
+    }
+  }
+
+  .backButton {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+
+    &:hover {
+      svg path {
+        fill: $black;
+      }
+    }
+
+    @include breakpoint(large down) {
+      svg {
+        width: 36px;
+        height: 23px;
+      }
+    }
+
+    @include breakpoint(small only) {
+      right: auto;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-44%);
+
+      svg {
+        width: 24px;
+        height: 15px;
+      }
+    }
+  }
+  .nextProject {
+    font-size: 0.8rem;
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    height: 320px;
+    width: 2.5rem;
+    left: 0;
+
+    span {
+      display: inline-block;
+      transform: translate(-43%) rotate(-90deg);
+      word-break: keep-all;
+      white-space: nowrap;
+      width: 560px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      @include breakpoint(large only) {
+        transform: translate(-45%) rotate(-90deg);
+      }
+
+      @include breakpoint(medium only) {
+        transform: translate(-46%) rotate(-90deg);
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+
+    svg {
+      width: 28px;
+      height: 18px;
+      transform: translateY(4px) rotate(-90deg);
+
+      @include breakpoint(large down) {
+        width: 24px;
+        height: 15px;
+      }
+
+    }
+    &:hover {
+      color: $black;
+      svg path {
+        fill: $black;
+      }
+    }
+
+    @include breakpoint(small only) {
+      height: auto;
+      left: auto;
+      right: 1rem;
+      bottom: 20%;
+      width: calc(100vw - (2rem + 36px));
+      span {
+        transform: none;
+        line-height: 1.1;
+        strong {
+          display: none;
+        }
+        text-align: right;
+        width: calc(100vw - (2rem + 36px));
+        margin-right: 1rem;
+        display: inline-block;
+        padding-right: 1.7rem;
+      }
+
+      svg {
+        position: absolute;
+        transform: translateY(-70%) rotate(-180deg);
+        right: 0;
+        top: 50%;
+      }
+    }
+  }
+}
+
+.projectNavigation {
+  &.yellow, &.green, &.blue {
+    background-color: $yellow;
+
+    .backButton {
+
+      svg path {
+        fill: $black;
+      }
+      &:hover {
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+    .nextProject {
+      color: $black;
+
+      svg path {
+        fill: $black;
+      }
+      &:hover {
+        color: $white;
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+  &.pink {
+    background-color: $pink;
+  }
+}
+
+.serviceTags {
+  color: $primary-color;
+  font-size: 0.8rem;
+  @include breakpoint(small only) {
+    font-size: 1rem;
+  }
+
+  dt {
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  dd + dt {
+    margin-top: 0.5rem;
+  }
+
+  a {
+    color: $primary-color;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+      height: 1px;
+      width: 100%;
+      left: 0;
+      bottom: -1px;
+      border-bottom: 1px dotted $primary-color;
+    }
+    &:hover {
+      &:before {
+        border-bottom: 1px dotted transparent;
+      }
+    }
+
+    &[target=_blank]:before {
+      width: calc(100% - 23px);
+    }
+  }
+}
+
+.detailMenuContainer {
+  @include breakpoint(medium down) {
+    //display: none;
+  }
+}
+
+.content {
+
+  h2 {
+    line-height: 1;
+  }
+
+  &.text {
+    margin-bottom: 1.5rem;
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &.image, &.textWithImage, &.slider, &.video {
+    margin-bottom: $global-margin;
+  }
+
+  &.textWithImage {
+    &.left.noPadding {
+      .grid-x {
+        margin-left: 0 !important;
+      }
+    }
+
+    &.right.noPadding {
+      .grid-x {
+        margin-right: 0 !important;
+      }
+    }
+
+    &.noPadding {
+      .cell.image {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @include breakpoint(small only) {
+      .cell.image {
+        margin-bottom: $global-margin;
+      }
+    }
+  }
+
+  ul {
+    list-style: none
+  }
+  li::before {
+    content: "•";
+    color: $primary-color;
+    font-size: 1.5rem;
+    margin-left: -1.2rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+    line-height: 1;
+    vertical-align: top;
+  }
+
+  .cta {
+    color: $primary-color;
+    h4 {
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+    a {
+      color: $primary-color;
+      border-bottom: 1px $primary-color dotted;
+      &:hover {
+        border-bottom: 1px transparent dotted;
+      }
+    }
+  }
+
+  &.liner {
+    hr {
+      max-width: none;
+      margin-top: 0;
+      margin-bottom: 4rem;
+      @include breakpoint(small only) {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  &.slider {
+    .js_slide {
+      figure {
+        figcaption {
+          display: block;
+          width: 100%;
+          background-color: $black;
+          color: $white;
+          font-size: 0.8rem;
+          padding: 0.2rem 1rem;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  &.meetus {
+    margin-bottom: 5rem;
+    @include breakpoint(small only) {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    img {
+      border-radius: 50%;
+      display: block;
+    }
+
+    p {
+      margin-bottom: 0.2rem;
+    }
+
+    .xlarge-8 {
+      @include breakpoint(medium) {
+        padding-left: 0;
+      }
+    }
+
+    a {
+      color: $primary-color;
+
+      @include breakpoint(small only) {
+        font-size: 0.9rem;
+      }
+      &.contactLink {
+        display: inline-block;
+        margin-right: 1rem;
+        @include breakpoint(small only) {
+          margin-right: 0.5rem;
+        }
+      }
+      svg {
+        display: inline-block;
+        margin-right: 8px;
+        width: 21px;
+        height: 21px;
+        @include breakpoint(small only) {
+          width: 16px;
+          height: 16px;
+        }
+        path  {
+          fill: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.nextProjectBlock {
+  height: 35vw;
+  position: relative;
+
+  a.ajaxContent {
+    display: block;
+    height: 100%;
+  }
+
+  @include breakpoint(small only) {
+    display: none;
+  }
+  .image {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      z-index: 2;
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+  .nextTextContainer {
+    color: $white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.2s ease-in-out;
+    z-index: 3;
+
+    left: 2.5rem;
+    margin-right: 2.5rem;
+
+    @include breakpoint(large) {
+      left: 2rem;
+      margin-right: 2rem;
+    }
+
+    @include breakpoint(medium down) {
+      left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    .nextText {
+      font-size: 1.7rem;
+      display: block;
+      line-height: 1.4;
+      margin-left: 0.3rem;
+
+      svg {
+        transform: rotate(180deg);
+        vertical-align: middle;
+
+        width: 47px;
+        height: 24px;
+
+        @include breakpoint(large down) {
+          width: 40px;
+          height: 20px;
+        }
+
+        path {
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+    }
+    .client {
+      font-size: 5rem;
+      display: block;
+      line-height: 0.8;
+    }
+  }
+
+  &:hover {
+    .nextTextContainer {
+      color: $black;
+
+      svg path {
+        fill: $black;
+      }
+    }
+  }
+}

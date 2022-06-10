@@ -1,0 +1,467 @@
+header {
+
+  &.home {
+    @include bodyPadding;
+    margin-bottom: 30vh;
+    z-index: 20;
+    position: relative;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    height: 100vh;
+
+    &.animated {
+      transition: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    @include breakpoint(medium down) {
+      margin-bottom: 10rem;
+      @include xy-grid('vertical');
+      height: 90vh;
+      justify-content: flex-end;
+    }
+
+    .headline {
+      height: 82vh;
+      @include breakpoint(medium down) {
+        height: auto;
+      }
+      @include xy-grid('horizontal');
+      @include flex-align($x: justify, $y: stretch);
+
+      div.logo {
+        @include xy-cell(12);
+        margin-left: 0.8rem;
+        @include breakpoint(large) {
+          @include xy-cell(8);
+          @include flex-align-self(bottom);
+          margin-left: 0.8rem;
+        }
+        @include breakpoint(medium down) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        margin-right: 0 !important;
+
+
+
+        .stickyContainer {
+          svg {
+            width: rem-calc(560);
+            height: rem-calc(105);
+            transition: width 0.1s linear, height 0.1s linear;
+
+            @include breakpoint(large only) {
+              width: rem-calc(500);
+              height: rem-calc(94);
+            }
+
+            @include breakpoint(small only) {
+              //width: 240px;
+              //height: 45px;
+              width: 80vw;
+              height: auto;
+            }
+
+          }
+          &.noStroke {
+            svg {
+              opacity: 0;
+            }
+          }
+        }
+
+        .is-sticky {
+          z-index: 20;
+          svg {
+            width: rem-calc(256);
+            height: rem-calc(48);
+
+            .name-tag-keep {
+              stroke-dasharray: 500;
+              stroke-dashoffset: 500;
+              animation: draw-hide 0.5s cubic-bezier(.52,.25,.52,.96) forwards;
+            }
+          }
+        }
+
+        .subtitle {
+          font-weight: normal;
+          font-size: 3.5rem;
+          line-height: 0.8;
+          display: block;
+          margin-top: -12px;
+          opacity: 0;
+          letter-spacing: -0.05rem;
+          margin-left: -6px;
+          white-space: nowrap;
+          transition-delay: 1.3s;
+
+          @include breakpoint(small only) {
+            //font-size: 2.2rem;
+            font-size: calc(2rem + 2vw);
+            margin-left: 0;
+          }
+        }
+      }
+      .payoff {
+        margin-top: 2rem;
+        @include breakpoint(large) {
+          width: 14rem;
+          margin-top: 3rem;
+        }
+        font-size: 1em;
+        @include breakpoint(small only) {
+          font-size: 1.1em;
+        }
+        line-height: 1.1;
+        margin-left: 0;
+        margin-right: 0;
+        transition-delay: 1.3s;
+
+
+        span {
+          line-height: 1;
+          margin-top: 0;
+
+          a {
+            border-bottom: 1px dotted $black;
+
+            &:hover {
+              border-bottom: 1px dotted $white;
+            }
+          }
+        }
+        //cursus animation for payoff
+        /*&:after {
+          width: 1.2rem;
+          height: 2rem;
+          content: '';
+          background-color: $white;
+          display: none;
+          animation: cursor 0.35s linear infinite;
+          transform: translate(-8px, 8px);
+          transition: background-color 1s ease-out;
+        }
+        &.noCursor:after {
+          background-color: $primary-color;
+        }*/
+      }
+    }
+
+    &.animate {
+      div.logo .subtitle, .scrollText {
+        opacity: 1;
+      }
+      svg.logo {
+        opacity: 1;
+        .name-tag {
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+          fill-opacity: 0;
+          animation: draw 1.5s cubic-bezier(.52,.25,.52,.96) forwards;
+
+        }
+        .name-tag-keep {
+          stroke-dasharray: 500;
+          stroke-dashoffset: 500;
+          fill-opacity: 0;
+          animation: draw-keep 1.5s cubic-bezier(.52,.25,.52,.96) forwards;
+        }
+      }
+    }
+
+    &.animateie11 {
+      svg.logo {
+        opacity: 1;
+        .name-tag {
+          fill-opacity: 1 !important;
+          stroke-dasharray: 0;
+          stroke-dashoffset: 0;
+        }
+        .name-tag-keep {
+          fill-opacity: 1 !important;
+          stroke-dasharray: 0;
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+
+    &.show {
+      opacity: 1;
+      .subtitle, .scrollText,.payoff {
+        transition-delay: unset !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .subtitle, .scrollText,.payoff {
+      transition-property: opacity;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &.isStuck {
+      .subtitle, .scrollText,.payoff {
+        transition-delay: unset !important;
+        opacity: 0 !important;
+      }
+    }
+  }
+
+  &.detail {
+    position: relative;
+    margin-bottom: 2rem;
+
+    .detailImage {
+      position: relative;
+
+      &:before, &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 5rem;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 100%);
+        background-blend-mode: color-burn;
+      }
+      &:before {
+        bottom: auto;
+        top: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0) 100%);
+      }
+    }
+
+    .navBarContainer {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      margin-top: 1.5rem;
+      @include breakpoint(large down) {
+        margin-top: 1.8rem;
+      }
+    }
+
+    .logo {
+      width: 128px;
+      height: 47px;
+
+      @include breakpoint(large down) {
+        width: 100px;
+        height: 37px;
+      }
+    }
+
+    .detailMenuContainer {
+      .menu {
+        li {
+          a {
+            color: $white;
+            padding: 0.4rem 0.7rem;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    h1 {
+      line-height: 0.9;
+      width: 80vw;
+      letter-spacing: -0.14rem;
+      margin-top: -4.2rem;
+      position: relative;
+      z-index: 2;
+      @include breakpoint(small only) {
+        letter-spacing: -0.05rem;
+        margin-top: -3.2rem;
+      }
+      .is {
+        display: block;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &.contentDetail {
+    height: 40vh;
+  }
+}
+
+h1 {
+  line-height: 0.9;
+  margin-bottom: 1rem;
+  letter-spacing: -0.14rem;
+  @include breakpoint(small only) {
+    letter-spacing: -0.05rem;
+  }
+
+  .client {
+    color: $white;
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02rem;
+    text-shadow: 0 0 20px rgba(0,0,0,0.2);
+    @include breakpoint(small only) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.menuContainer {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 2rem;
+  z-index: 24;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+
+  &.show {
+    opacity: 1;
+  }
+
+
+  @include breakpoint(medium down) {
+    bottom: auto;
+    right: 0;
+    top: -800px;
+    height: 400px;
+    width: 100vw;
+    background-color: $black;
+    transition: top 0.2s cubic-bezier(.87,.64,.71,.6);
+    will-change: top;
+    transform: translate3d(0,0,0);
+    padding: 0.5rem;
+    z-index: 23;
+    overflow-y: visible;
+
+    .logo {
+      width: 256px;
+      height: 48px;
+    }
+
+    .menu {
+      display: block;
+      max-width: 80vw;
+
+      li {
+        font-size: 1em;
+        a {
+          color: $white;
+
+          &:hover,&:active {
+            color: $primary-color;
+          }
+        }
+        &.menu-text {
+          font-weight: bold;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    top: 0vh;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 99;
+  }
+}
+
+.scrollText {
+  margin: 6vh 0.7rem;
+  position: relative;
+  opacity: 0;
+  font-size: 1em;
+  transition-delay: 1.3s;
+
+  @include breakpoint(large) {
+    position: absolute;
+    bottom: 2rem;
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(medium down) {
+    margin: 2rem 0.7rem 1.5rem;
+  }
+
+  @include breakpoint(small only) {
+    font-size: 1.1em;
+  }
+
+  svg {
+    width: 18px;
+    height: 29px;
+    vertical-align: bottom;
+    margin-right: 0.5rem;
+  }
+
+  @include breakpoint(medium down) {
+    margin-left: 0;
+
+    &:before {
+      height: 2px;
+      left: -4rem;
+    }
+  }
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 500;
+    fill-opacity: 0;
+  }
+  90% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+@keyframes draw-keep {
+  0% {
+    stroke-dashoffset: 500;
+  }
+  75% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  95% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-hide {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 500;
+  }
+}

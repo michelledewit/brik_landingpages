@@ -1,0 +1,89 @@
+field: 05176529-a7bb-4cb4-a476-6572bdefc528
+fieldLayouts:
+  e8046c38-b224-4d5a-971e-e0b4052d5e15:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 056b9792-f23e-473b-b1b4-21c1229be541
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6aaf7718-3854-499c-9c71-12d1fe90c285
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 10aec2c5-a970-4045-b8f0-2d0453621dd1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  056b9792-f23e-473b-b1b4-21c1229be541:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  10aec2c5-a970-4045-b8f0-2d0453621dd1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: teamOverview
+    instructions: ''
+    name: Teamoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_teamoverview}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  6aaf7718-3854-499c-9c71-12d1fe90c285:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtssubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,25 @@
+fieldLayouts:
+  fe0e6809-64ec-429c-8931-87460749fd5d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Titel
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: afefc01d-ee88-4012-865d-66088845a99a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6f500ae9-384f-4dd9-9e0a-9509b8ac594d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Tab 1'
+        sortOrder: 1
+handle: jobsOverview
+hasTitleField: true
+name: 'Vacatures overzicht'
+section: 00dbc072-4d2a-4fea-b84e-8c63e4250914
+sortOrder: 1
+titleFormat: null

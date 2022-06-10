@@ -1,0 +1,88 @@
+/**
+  * (optional) define here the style definitions which should be applied on the slider container
+  * e.g. width including further controls like arrows etc.
+  */
+.slider {
+  position: relative;
+
+  .frame {
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .slides {
+    display: inline-block;
+  }
+
+  ul {
+    margin-left: 0;
+    list-style: none;
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    margin-right: 2rem;
+
+    width: calc(100vw - 6.5rem);
+    @include breakpoint(large down) {
+      width: calc(100vw - 6rem);
+    }
+    @include breakpoint(small only) {
+      width: 100vw;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:before {
+      display: none !important;
+    }
+  }
+
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    display: block;
+    cursor: pointer;
+    background-color: $primary-color;
+    width: 2rem;
+    height: 2rem;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $black;
+    }
+
+    &.disabled {
+      opacity: 0;
+    }
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next svg, .prev svg {
+    width: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .next svg {
+    transform: translate(-50%,-50%) rotate(180deg);
+  }
+
+}

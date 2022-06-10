@@ -1,0 +1,55 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: color
+instructions: ''
+name: Kleur
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Blauw
+        -
+          - value
+          - blue
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Groen
+        -
+          - value
+          - green
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Geel
+        -
+          - value
+          - yellow
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Rood
+        -
+          - value
+          - pink
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,27 @@
+{
+  "deploy": "deploy",
+  "public": "public_html",
+  "source": {
+    "templates": "source/templates",
+    "scripts": "source/javascripts",
+    "sass": "source/scss",
+    "stylesheets": "source/stylesheets",
+    "components": "source/components",
+    "cache": "source/.cache",
+    "fonts": "source/fonts",
+    "images": "source/images",
+    "favicon": "source/favicon",
+    "videos": "source/videos",
+    "settings": "source/settings"
+  },
+  "assets": {
+    "styles": "resources/app/stylesheets",
+    "scripts": "resources/app/javascripts",
+    "images": "resources/app/images",
+    "html": "resources/app/htmls",
+    "fonts": "resources/app/fonts",
+    "videos": "resources/app/videos"
+  },
+  "bower_components": "bower_components",
+  "node_modules": "node_modules"
+}

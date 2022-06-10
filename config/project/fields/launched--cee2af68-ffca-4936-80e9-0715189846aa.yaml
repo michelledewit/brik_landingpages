@@ -1,0 +1,16 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: launched
+instructions: ''
+name: Opgeleverd
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: string
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

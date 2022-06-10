@@ -1,0 +1,33 @@
+fieldLayouts:
+  88e2c66d-d8b9-4674-8838-60e8d7724958:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: f3af74bd-a0b4-45e7-9423-a17d604a577d
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6f500ae9-384f-4dd9-9e0a-9509b8ac594d
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: dbdb29b1-6bda-4412-a25f-ec09e33895b8
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Inhoud
+        sortOrder: 1
+handle: jobs
+hasTitleField: true
+name: Vacatures
+section: 9fadaa99-eba1-4b13-8b78-d91a84760d76
+sortOrder: 1
+titleFormat: null

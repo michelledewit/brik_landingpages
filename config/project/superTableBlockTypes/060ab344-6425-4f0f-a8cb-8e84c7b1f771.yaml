@@ -1,0 +1,89 @@
+field: dfecdf10-279c-4919-8ae6-4f7835ccaa26
+fieldLayouts:
+  cb5b854f-eb71-4bb8-b7a1-7208de43440a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2de9448a-6b52-4bfb-8251-f3770e7e01f8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6b98f166-1e45-4059-8a93-ee63e77fdd7c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 462013c6-e5ba-4958-87dd-2fad02e9f18b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2de9448a-6b52-4bfb-8251-f3770e7e01f8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  462013c6-e5ba-4958-87dd-2fad02e9f18b:
+    contentColumnType: string
+    fieldGroup: null
+    handle: projectOverview
+    instructions: ''
+    name: Projectoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_projectoverview_1}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  6b98f166-1e45-4059-8a93-ee63e77fdd7c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtssubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

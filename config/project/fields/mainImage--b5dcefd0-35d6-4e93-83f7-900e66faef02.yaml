@@ -1,0 +1,25 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: mainImage
+instructions: ''
+name: Hoofdafbeelding
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: ''
+  singleUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: ''
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

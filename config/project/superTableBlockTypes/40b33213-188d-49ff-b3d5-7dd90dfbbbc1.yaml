@@ -1,0 +1,89 @@
+field: f3fbe48e-0b51-4ab3-9a45-35b02925fbc0
+fieldLayouts:
+  b7491ba9-3350-45da-885b-0c5c3ceaf0ac:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: aae74d5b-d502-458b-a469-16bae0de17ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 03b9ddbd-fabf-40e1-89b3-8c5a3a240237
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4f4dee97-5dd9-4453-95bb-1fb5644c2d4f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  03b9ddbd-fabf-40e1-89b3-8c5a3a240237:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtssubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4f4dee97-5dd9-4453-95bb-1fb5644c2d4f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: featureOverview
+    instructions: ''
+    name: Featureoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_featureoverview_1}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  aae74d5b-d502-458b-a469-16bae0de17ec:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

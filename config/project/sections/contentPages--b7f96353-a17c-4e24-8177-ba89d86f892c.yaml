@@ -1,0 +1,18 @@
+enableVersioning: true
+handle: contentPages
+name: 'Content pagina''s'
+previewTargets:
+  -
+    label: 'Primaire invoer-pagina'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  b3528ed7-d45e-4ed6-8279-c6d3463caa6d:
+    enabledByDefault: true
+    hasUrls: true
+    template: content/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 2
+  uid: 9b5c7fdc-9076-4420-9c09-a1e72ce99fc5
+type: structure

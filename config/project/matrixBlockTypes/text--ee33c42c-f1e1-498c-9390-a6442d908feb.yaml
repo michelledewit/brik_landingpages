@@ -1,0 +1,88 @@
+field: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+fieldLayouts:
+  59affa06-731b-455a-8121-cbf0ea7b18f1:
+    tabs:
+      -
+        fields:
+          7375f739-af0b-479e-8591-44920a07c4ad:
+            required: true
+            sortOrder: 1
+          7fbb9c6c-7b82-478c-b84d-8b86cdadcaef:
+            required: false
+            sortOrder: 4
+          8a8e5924-450e-40ec-8f4c-ccbb88cd692a:
+            required: false
+            sortOrder: 2
+          97d09d1f-dfeb-4fea-a8ea-4e37b9d292cc:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  7375f739-af0b-479e-8591-44920a07c4ad:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7fbb9c6c-7b82-478c-b84d-8b86cdadcaef:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaUrlText
+    instructions: ''
+    name: 'CTA url tekst'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8a8e5924-450e-40ec-8f4c-ccbb88cd692a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaTitle
+    instructions: ''
+    name: 'CTA titel'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  97d09d1f-dfeb-4fea-a8ea-4e37b9d292cc:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: ctaUrl
+    instructions: ''
+    name: 'CTA url'
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: text
+name: Tekst
+sortOrder: 1

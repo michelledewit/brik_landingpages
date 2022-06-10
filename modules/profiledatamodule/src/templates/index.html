@@ -1,0 +1,157 @@
+{% extends "_layouts/cp" %}
+
+{% set title = "MSCH scores" %}
+
+
+{% block content %}
+        <table class="data fullwidth" x-data="scoreTable()">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Sessie key</th>
+                    <th>Lead score</th>
+                    <th>Methodisch</th>
+                    <th>Spontaan</th>
+                    <th>Competitief</th>
+                    <th>Humanistisch</th>
+                </tr>
+            </thead>
+            <tbody>
+              <template x-for="item in scoreItems">
+                <tr :key="item.sessionKey" :class="[getBGColor(item),isChanged(item)]">
+                  <td x-text="fieldNames[getBGColor(item)]" class="font-weight: bold;"></td>
+                  <td x-text="item.sessionKey"></td>
+                  <td x-text="item.leadScore"></td>
+                  <td x-text="item.mScore"></td>
+                  <td x-text="item.sScore"></td>
+                  <td x-text="item.cScore"></td>
+                  <td x-text="item.hScore"></td>
+                </tr>
+              </template>
+            </tbody>
+        </table>
+        <style>
+          .bgMScore {
+            background-color: #F3D9D3;
+          }
+          .bgSScore {
+            background-color: #E7F2F4;
+          }
+          .bgCScore {
+            background-color: #FCF0E1;
+          }
+          .bgHScore {
+            background-color: #E7F3EE;
+          }
+
+          .highlight {
+            animation-name: highlight;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+          }
+
+            @keyframes highlight {
+              0%   {
+                color: black;
+                background-color: inherit;
+              }
+              50%  {
+                color: white;
+                background-color: black;
+              }
+              100% {
+                color: black;
+                background-color: inherit;
+              }
+            }
+        </style>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script type="text/javascript">
+          function scoreTable() {
+          		return {
+
+                init() {
+                  setInterval(this.getItems.bind(this), 8000);
+                  this.getItems();
+                },
+
+          		  scoreItems: [],
+                fields: ['mScore','sScore','cScore','hScore'],
+          		  fieldNames: {
+          		    'bgMScore':'Methodisch','bgSScore': 'Spontaan','bgCScore':'Competitief','bgHScore':'Humanistisch'
+          		  },
+                changedItems:[],
+                
+                getItems() {
+                        fetch('/actions/profiledata-module/default/total-items',{
+                          method: 'GET',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          }
+                        })
+                          .then(response => response.json())
+                          .then(data => {
+                            this.handleItems(data);
+                          });
+                },
+
+                handleItems(data) {
+                  if(data != null) {
+                    data.sort((itemA, itemB) => itemB.leadScore - itemA.leadScore);
+                    this.changedItems = data.filter((item, index) => {
+                      var oldItem = this.scoreItems[index];
+                      var returnValue = false;
+                      if(oldItem != null) {
+                        for(i in this.fields) {
+                          var fieldName = this.fields[i];
+                          if(item[fieldName] != oldItem[fieldName]) {
+                            returnValue = true;
+                          }
+                        }
+                      }
+                      return returnValue;
+                    });
+                    this.scoreItems = data;
+                  }
+                },
+
+                getBGColor(item) {
+                  var valName = null;
+                  var oldHighValue = 0;
+                  for(i in this.fields) {
+                    var field = this.fields[i];
+                      var value = item[field];
+                      if(value == oldHighValue) {
+                        valName = 'equal';
+                      }
+                      if(value > oldHighValue) {
+                        oldHighValue = value;
+                        valName = field;
+                      }
+                  }
+
+                  if(valName == 'mScore'){
+                    return 'bgMScore';
+                  }
+                  if(valName == 'sScore'){
+                    return 'bgSScore';
+                  }
+                  if(valName == 'cScore'){
+                    return 'bgCScore';
+                  }
+                  if(valName == 'hScore'){
+                    return 'bgHScore';
+                  } 
+
+                  return '';
+                },
+
+                isChanged(item) {
+                  var itemsChanged = this.changedItems.filter((changedItem) => changedItem.sessionKey == item.sessionKey);
+                  return itemsChanged.length > 0 ? 'highlight' : null;
+                }
+          		};
+            }
+        </script>
+
+{% endblock %}

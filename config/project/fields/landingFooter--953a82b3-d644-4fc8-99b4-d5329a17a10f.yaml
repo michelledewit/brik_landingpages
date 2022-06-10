@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: landingFooter
+instructions: ''
+name: 'Landingspagina footer'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_landingfooter}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

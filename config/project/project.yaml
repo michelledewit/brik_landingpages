@@ -1,0 +1,163 @@
+dateModified: 1652957742
+email:
+  fromEmail: noreply@brik.digital
+  fromName: Brik.digital
+  template: null
+  transportSettings:
+    apiKey: key-c4d0fcfefc802e0528c32e8426e3238f
+    domain: postoffice.brik.digital
+    endpoint: 'https://api.mailgun.net/v3/postoffice.brik.digital'
+  transportType: craft\mailgun\MailgunAdapter
+plugins:
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: 7GW04D4KGDDN26OYXL3BLJD8
+    schemaVersion: 3.1.0
+    settings:
+      apiKey: ''
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: null
+      cacheElementQueries: true
+      cacheElements: true
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cacheWarmerSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
+      cachingEnabled: '1'
+      clearCacheAutomatically: '1'
+      customSiteUris: ''
+      debug: false
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      driverJobPriority: 100
+      excludedUriPatterns: ''
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '.*'
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      mutexTimeout: 1
+      outputComments: true
+      queryStringCaching: '1'
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      sendPoweredByHeader: true
+      warmCacheAutomatically: '1'
+  contact-form:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: '1'
+      prependSender: Namens
+      prependSubject: 'Nieuw bericht van website: Brik.digital'
+      successFlashMessage: 'Your message has been sent.'
+      toEmail: info@brik.digital
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  linkit:
+    enabled: '1'
+    licenseKey: WH776OROZYWS6OR21FMI9AUC
+    schemaVersion: 1.0.8
+    settings: null
+  mailgun:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  minify:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  navigation:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.21
+    settings: null
+  position-fieldtype:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  redactor:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.3.0
+    settings: null
+  seomatic:
+    enabled: '1'
+    licenseKey: DDURF50YSGDS0QRRKUTBMI18
+    schemaVersion: 3.0.11
+    settings:
+      devModeTitlePrefix: '&#x1f6a7; '
+      displayAnalysisSidebar: true
+      displayPreviewSidebar: '1'
+      environment: live
+      generatorEnabled: ''
+      headersEnabled: '1'
+      maxDescriptionLength: '300'
+      maxTitleLength: '120'
+      pluginName: SEOmatic
+      renderEnabled: '1'
+      separatorChar: ' '
+      sitemapsEnabled: '1'
+  snaptcha:
+    enabled: false
+    licenseKey: null
+    schemaVersion: 2.1.0
+    settings:
+      blacklist: ''
+      errorMessage: 'Sorry maar volgens onze testen zijn er spam activiteiten geconstateerd in het insturen van dit formulier. Het formulier wordt nu niet verzonden, ververs de pagina en probeer opnieuw.'
+      excludedUriPatterns: ''
+      expirationTime: '60'
+      fieldName: snaptchaBrik
+      logRejected: '1'
+      minimumSubmitTime: '5'
+      oneTimeKey: '1'
+      validationEnabled: ''
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  video-embedder:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+system:
+  edition: pro
+  live: true
+  name: Brik
+  schemaVersion: 3.5.13
+  timeZone: Europe/Amsterdam
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

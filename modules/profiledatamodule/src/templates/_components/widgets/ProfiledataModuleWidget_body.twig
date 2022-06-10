@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * profiledata module for Craft CMS
+ *
+ * ProfiledataModuleWidget Widget Body
+ *
+ * @author    Michelle de Wit / John Ripmeester
+ * @copyright Copyright (c) 2022 Michelle de Wit / John Ripmeester
+ * @link      https://brik.digital
+ * @package   ProfiledataModule
+ * @since     0.0.1
+ */
+#}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@modules/profiledata-module/assetbundles/profiledatamodulewidgetwidget/dist', true) ~ '/img/ProfiledataModuleWidget-icon.svg' %}
+
+<img src="{{ iconUrl }}" height="64" width="64" />
+
+<p>{{ message }}</p>

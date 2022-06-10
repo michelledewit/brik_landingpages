@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * profiledata module for Craft CMS
+ *
+ * ProfiledataModuleWidget Widget Settings
+ *
+ * @author    Michelle de Wit / John Ripmeester
+ * @copyright Copyright (c) 2022 Michelle de Wit / John Ripmeester
+ * @link      https://brik.digital
+ * @package   ProfiledataModule
+ * @since     0.0.1
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("modules\\profiledatamodule\\assetbundles\\profiledatamodule\\ProfiledataModuleAsset") %}
+
+{{ forms.textField({
+    label: 'Message',
+    instructions: 'Enter a message here.',
+    id: 'message',
+    name: 'message',
+    value: widget['message']})
+}}

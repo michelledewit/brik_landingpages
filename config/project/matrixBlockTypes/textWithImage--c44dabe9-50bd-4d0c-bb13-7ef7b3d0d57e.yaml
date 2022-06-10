@@ -1,0 +1,167 @@
+field: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+fieldLayouts:
+  0647df72-8e26-41de-af23-2eb2076e1112:
+    tabs:
+      -
+        fields:
+          0660efb9-018d-40a2-8211-8cdbce070c99:
+            required: true
+            sortOrder: 1
+          1e9f86a8-ddf9-40fb-af2d-374b99e16a53:
+            required: false
+            sortOrder: 6
+          34bb115f-fb62-4ec0-b96f-3874dcb5afdb:
+            required: false
+            sortOrder: 5
+          6f581609-3988-4cb3-ae72-e96c43dead8c:
+            required: false
+            sortOrder: 7
+          7432fab7-d6b4-437c-a315-39ab687e2262:
+            required: true
+            sortOrder: 4
+          9570e4f7-bd98-4ce9-a2dd-b0db05e30fa3:
+            required: false
+            sortOrder: 3
+          f53d4752-bea5-4931-8f79-8cc7471755f1:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  0660efb9-018d-40a2-8211-8cdbce070c99:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Tekst
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  1e9f86a8-ddf9-40fb-af2d-374b99e16a53:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: ctaUrl
+    instructions: ''
+    name: 'CTA url'
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  34bb115f-fb62-4ec0-b96f-3874dcb5afdb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaTitle
+    instructions: ''
+    name: 'CTA titel'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6f581609-3988-4cb3-ae72-e96c43dead8c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: ctaUrlText
+    instructions: ''
+    name: 'CTA url tekst'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7432fab7-d6b4-437c-a315-39ab687e2262:
+    contentColumnType: string
+    fieldGroup: null
+    handle: position
+    instructions: ''
+    name: 'Positie afbeelding'
+    searchable: true
+    settings:
+      default: left
+      options:
+        __assoc__:
+          -
+            - left
+            - '1'
+          -
+            - center
+            - ''
+          -
+            - right
+            - '1'
+          -
+            - full
+            - ''
+          -
+            - drop-left
+            - ''
+          -
+            - drop-right
+            - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: rias\positionfieldtype\fields\Position
+  9570e4f7-bd98-4ce9-a2dd-b0db05e30fa3:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: padding
+    instructions: ''
+    name: 'Padding om afbeelding'
+    searchable: true
+    settings:
+      default: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  f53d4752-bea5-4931-8f79-8cc7471755f1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: mainImage
+    instructions: ''
+    name: Afbeelding
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Kies een afbeelding'
+      singleUploadLocationSource: 'volume:ca9ce813-806d-48ea-b8be-29f238c997a6'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: textWithImage
+name: 'Tekst met afbeelding'
+sortOrder: 2

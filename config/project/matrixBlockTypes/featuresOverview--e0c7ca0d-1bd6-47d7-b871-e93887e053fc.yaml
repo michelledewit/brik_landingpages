@@ -1,0 +1,202 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  f6e3e44e-dd54-435b-9fa8-0f575d9ac895:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 724bec9f-bbb5-437f-8aa3-f4001c2dc6ae
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eea731df-4e58-4c51-83cb-ba4fd6dbed6e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d853510d-4d1d-451a-abf1-4135f3b3e692
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f3fbe48e-0b51-4ab3-9a45-35b02925fbc0
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  724bec9f-bbb5-437f-8aa3-f4001c2dc6ae:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileM
+    instructions: ''
+    name: 'Profiel M'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 4fcc6ca9-31d9-4419-baa6-fa9820fae73f
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2d3f6220-b521-4e66-9078-fd989345f505
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e7fa0b26-ba05-46a8-983a-f3415248269e
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_13_profilem}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  d853510d-4d1d-451a-abf1-4135f3b3e692:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileC
+    instructions: ''
+    name: 'Profiel C'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - a9591c81-31b0-4529-b939-1c7723a2c8f4
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 3fe02766-cb15-4477-9bb8-9ee757622da7
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_13_profilec}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  eea731df-4e58-4c51-83cb-ba4fd6dbed6e:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileS
+    instructions: ''
+    name: 'Profiel S'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 9e5f080c-ad68-427c-a514-3c35aa16641a
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 12f1fe9a-565b-4ec5-b495-02197e77bcb8
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_13_profiles}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  f3fbe48e-0b51-4ab3-9a45-35b02925fbc0:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileH
+    instructions: ''
+    name: 'Profiel H'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - aae74d5b-d502-458b-a469-16bae0de17ec
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 03b9ddbd-fabf-40e1-89b3-8c5a3a240237
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 4f4dee97-5dd9-4453-95bb-1fb5644c2d4f
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_13_profileh}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: featuresOverview
+name: Featuresoverzicht
+sortOrder: 6

@@ -1,0 +1,12 @@
+fieldLayouts:
+  ec9f0265-47fc-4291-a9f1-ea1a4172adf1:
+    tabs:
+      -
+        fields:
+          16443ca5-425f-4e8f-8635-b3d96994b954:
+            required: false
+            sortOrder: 1
+        name: Menu
+        sortOrder: 1
+handle: mainMenu
+name: Hoofdmenu

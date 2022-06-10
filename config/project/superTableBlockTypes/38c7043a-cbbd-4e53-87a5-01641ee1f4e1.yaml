@@ -1,0 +1,61 @@
+field: d853510d-4d1d-451a-abf1-4135f3b3e692
+fieldLayouts:
+  8e3e4528-bba4-4508-b3ab-469b37cd2c37:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: a9591c81-31b0-4529-b939-1c7723a2c8f4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3fe02766-cb15-4477-9bb8-9ee757622da7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3fe02766-cb15-4477-9bb8-9ee757622da7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: featureOverview
+    instructions: ''
+    name: Featureoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_featureoverview_2}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  a9591c81-31b0-4529-b939-1c7723a2c8f4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

@@ -1,0 +1,40 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  c0a4cde0-9eee-4804-b834-273fe595679f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: c27f6832-61c0-4d72-ab9f-b1ecaa4891b8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  c27f6832-61c0-4d72-ab9f-b1ecaa4891b8:
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockTitle
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: contact
+name: Contact
+sortOrder: 10

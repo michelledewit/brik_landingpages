@@ -1,0 +1,114 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  56838cc3-2908-4881-9255-023eb97dd44b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d32a5bd1-d303-4742-a28e-153428e3dd08
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a2c86581-1d86-43cb-82ec-da691e63f75e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a2c86581-1d86-43cb-82ec-da691e63f75e:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileH
+    instructions: ''
+    name: 'Profiel H'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 56f31780-cacd-4789-87ea-d1539b7f7a29
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d3be7d3c-f248-402e-bb8a-9c11d769aebf
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ba746894-fe5f-4b25-b231-4e055eeb7683
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_12_profileh}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  d32a5bd1-d303-4742-a28e-153428e3dd08:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileM
+    instructions: ''
+    name: 'Profiel M'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 097b2168-2266-4320-9103-5d5f7582eb3a
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2fc72b55-431a-4f35-a8c9-7086e33d90e4
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - ced20f61-b798-41f4-ab30-985f4c887ebe
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_12_profilem}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: faq
+name: 'Veelgestelde vragen'
+sortOrder: 5

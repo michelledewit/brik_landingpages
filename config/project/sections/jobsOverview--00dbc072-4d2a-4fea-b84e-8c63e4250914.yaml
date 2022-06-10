@@ -1,0 +1,15 @@
+enableVersioning: true
+handle: jobsOverview
+name: 'Vacatures overzicht'
+previewTargets:
+  -
+    label: 'Primaire invoer-pagina'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  b3528ed7-d45e-4ed6-8279-c6d3463caa6d:
+    enabledByDefault: true
+    hasUrls: true
+    template: jobs/index
+    uriFormat: vacatures
+type: single

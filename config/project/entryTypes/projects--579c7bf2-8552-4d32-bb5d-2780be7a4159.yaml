@@ -1,0 +1,73 @@
+fieldLayouts:
+  23a4e12e-fac7-4fd3-95da-f43babd9079d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Titel
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: f0934ba4-a67c-4f47-a890-01b21a40599f
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: a8d5422a-f50a-4916-8041-8dacb4e9d7e1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: a7d963bc-2e89-40c9-9890-f0948f830184
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b5dcefd0-35d6-4e93-83f7-900e66faef02
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: bc336be3-cdb4-4f23-8ad3-b88b5f875ba4
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6f500ae9-384f-4dd9-9e0a-9509b8ac594d
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: fd6dd34f-7896-467c-877f-3e32a046b982
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cee2af68-ffca-4936-80e9-0715189846aa
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1d3ee8c6-a626-4d76-89dc-69eed82f3072
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 4a1cf622-dd58-40cd-ae4e-41f80b69ac3d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 39b31ae2-43f6-49ed-a835-78e0c8f362eb
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Inhoud
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: dbdb29b1-6bda-4412-a25f-ec09e33895b8
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Kennismaken
+        sortOrder: 2
+handle: projects
+hasTitleField: true
+name: Projecten
+section: 8098e012-cb3d-4b65-be96-f7c423bdf6cb
+sortOrder: 1
+titleFormat: null

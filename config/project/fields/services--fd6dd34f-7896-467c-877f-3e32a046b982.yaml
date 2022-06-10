@@ -1,0 +1,17 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: services
+instructions: ''
+name: Services
+searchable: true
+settings:
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  source: 'taggroup:a642a82d-21f6-4ff2-9536-70e091203cee'
+  sources: '*'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Tags

@@ -1,0 +1,8 @@
+handle: mainMenu
+instructions: null
+name: Hoofdmenu
+propagateNodes: '0'
+sortOrder: null
+structure:
+  maxLevels: '1'
+  uid: b0c0a84f-24c8-4892-ad4b-7a3bf89d8c87

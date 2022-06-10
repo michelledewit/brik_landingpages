@@ -1,0 +1,96 @@
+field: 8dd06eb1-31a8-4504-9d08-109286cfe902
+fieldLayouts:
+  251c93ed-eda4-44b8-adca-6a3687ec9595:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ce8580ca-8899-4254-82b2-9a9b79b94798
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b5d56bfc-daf7-428e-9e54-01fc110cdaf5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a5c887b2-0652-4dc0-8cc9-a4905bb8d8ae
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  a5c887b2-0652-4dc0-8cc9-a4905bb8d8ae:
+    contentColumnType: text
+    fieldGroup: null
+    handle: img
+    instructions: ''
+    name: Afb
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b5d56bfc-daf7-428e-9e54-01fc110cdaf5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: featureText
+    instructions: ''
+    name: Tekst
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ce8580ca-8899-4254-82b2-9a9b79b94798:
+    contentColumnType: text
+    fieldGroup: null
+    handle: featureTitle
+    instructions: ''
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: features
+name: Features
+sortOrder: 1

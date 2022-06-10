@@ -1,0 +1,89 @@
+field: a2c86581-1d86-43cb-82ec-da691e63f75e
+fieldLayouts:
+  ffb1fc14-09a2-4305-89c4-cd603abf2f3f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 56f31780-cacd-4789-87ea-d1539b7f7a29
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d3be7d3c-f248-402e-bb8a-9c11d769aebf
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ba746894-fe5f-4b25-b231-4e055eeb7683
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  56f31780-cacd-4789-87ea-d1539b7f7a29:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ba746894-fe5f-4b25-b231-4e055eeb7683:
+    contentColumnType: string
+    fieldGroup: null
+    handle: questionsOverview
+    instructions: ''
+    name: Vragenoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_questionsoverview}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  d3be7d3c-f248-402e-bb8a-9c11d769aebf:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtssubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

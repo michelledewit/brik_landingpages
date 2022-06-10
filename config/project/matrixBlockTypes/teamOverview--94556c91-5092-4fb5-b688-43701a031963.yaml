@@ -1,0 +1,107 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  05425d81-47dc-4fc7-9e3f-b8d5caee1cf0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e8d55b2b-a47e-405a-ae03-fa66f7672549
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 05176529-a7bb-4cb4-a476-6572bdefc528
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  05176529-a7bb-4cb4-a476-6572bdefc528:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileH
+    instructions: ''
+    name: 'Profiel H'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 056b9792-f23e-473b-b1b4-21c1229be541
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 6aaf7718-3854-499c-9c71-12d1fe90c285
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 10aec2c5-a970-4045-b8f0-2d0453621dd1
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_11_profileh}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  e8d55b2b-a47e-405a-ae03-fa66f7672549:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileS
+    instructions: ''
+    name: 'Profiel S'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - db3f8baf-630c-4a6c-a789-1bcd4ba26f82
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9a03b352-46f3-4f7e-943f-8950208a5dbc
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_11_profiles}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: teamOverview
+name: Teamoverzicht
+sortOrder: 4

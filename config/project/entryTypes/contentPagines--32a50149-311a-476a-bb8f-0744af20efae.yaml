@@ -1,0 +1,33 @@
+fieldLayouts:
+  e73d258e-90a3-4ab8-b719-dfabc49fc4cc:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: e89e96f8-7f2c-4b8e-9293-6c9d457cc7c9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: afefc01d-ee88-4012-865d-66088845a99a
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6f500ae9-384f-4dd9-9e0a-9509b8ac594d
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cb763154-e3f9-4c27-8d35-7bb8d2ad7a85
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Inhoud
+        sortOrder: 1
+handle: contentPagines
+hasTitleField: true
+name: 'Content pagina''s'
+section: b7f96353-a17c-4e24-8177-ba89d86f892c
+sortOrder: 1
+titleFormat: null

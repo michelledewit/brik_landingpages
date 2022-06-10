@@ -1,0 +1,230 @@
+field: fee69ac9-921e-42f0-8bb3-c83ad0f0f7c8
+fieldLayouts:
+  d5ff8e8d-3f98-487c-9f72-48ad26484a9b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0d0b7a81-8583-4495-bda4-dc085e1ddcf6
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 505e24bf-1d60-4dbf-8603-f1b3a337eedb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 01453c46-11bf-479f-b946-a2f0fec0711f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 712afa46-18ea-4e25-af28-55160b411de2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  01453c46-11bf-479f-b946-a2f0fec0711f:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileC
+    instructions: ''
+    name: 'Profiel C'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 2c4d12a0-5d00-4698-b618-26c88a112ae3
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5dae2c92-239d-4baf-8a59-82720d713404
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - f5035323-8744-4261-b58b-6d6daaf15676
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_16_profilec}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  0d0b7a81-8583-4495-bda4-dc085e1ddcf6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileM
+    instructions: ''
+    name: 'Profiel M'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - b8886496-d199-4218-b78e-a526f143ddd5
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fb2ca294-ed82-406a-abf7-7f58b7e0d3e4
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 32836ddd-50ef-4acb-8066-80605130dd66
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 0f34f416-a012-4d89-bf98-df4a1155c5be
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_16_profilem}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  505e24bf-1d60-4dbf-8603-f1b3a337eedb:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileS
+    instructions: ''
+    name: 'Profiel S'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 6c1aa8ad-01ae-46f2-946c-5fc1d3beef56
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 74f416ca-4876-4e0e-bfb1-670f99d945d4
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - dafd407b-c8ac-4e3c-8929-136d3e9adb73
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_16_profiles}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  712afa46-18ea-4e25-af28-55160b411de2:
+    contentColumnType: string
+    fieldGroup: null
+    handle: profileH
+    instructions: ''
+    name: 'Profiel H'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - a6f6d384-2092-4c2a-b4d6-3ac8a0adf942
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 3cd671e4-5e58-4621-b879-d0a22a1d9339
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - cd6d317e-99e7-4bb8-a960-04473db2baa6
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 8dd06eb1-31a8-4504-9d08-109286cfe902
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_16_profileh}}'
+      fieldLayout: matrix
+      maxRows: '1'
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: whitepaper
+name: 'Whitepaper uitgelicht'
+sortOrder: 7

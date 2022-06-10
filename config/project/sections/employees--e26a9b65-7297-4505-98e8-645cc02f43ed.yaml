@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: employees
+name: Medewerkers
+propagationMethod: all
+siteSettings:
+  b3528ed7-d45e-4ed6-8279-c6d3463caa6d:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 9fa616ed-a6a3-4843-9189-8fb2bbdc30d4
+type: structure

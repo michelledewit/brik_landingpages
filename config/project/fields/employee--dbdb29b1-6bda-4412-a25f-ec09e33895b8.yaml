@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: f66ec9f2-85d5-4105-a780-f700f447c882
+handle: employee
+instructions: ''
+name: Medewerker
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Kies een medewerker'
+  source: null
+  sources:
+    - 'section:e26a9b65-7297-4505-98e8-645cc02f43ed'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

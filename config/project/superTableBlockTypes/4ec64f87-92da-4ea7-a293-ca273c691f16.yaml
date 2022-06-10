@@ -1,0 +1,89 @@
+field: d32a5bd1-d303-4742-a28e-153428e3dd08
+fieldLayouts:
+  cb40b137-2ad0-474f-8068-76c6be3c9129:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 097b2168-2266-4320-9103-5d5f7582eb3a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fc72b55-431a-4f35-a8c9-7086e33d90e4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ced20f61-b798-41f4-ab30-985f4c887ebe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  097b2168-2266-4320-9103-5d5f7582eb3a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2fc72b55-431a-4f35-a8c9-7086e33d90e4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewSubtitle
+    instructions: ''
+    name: Overzichtsubtitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ced20f61-b798-41f4-ab30-985f4c887ebe:
+    contentColumnType: string
+    fieldGroup: null
+    handle: questionsOverview
+    instructions: ''
+    name: Vragenoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_questionsoverview_1}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

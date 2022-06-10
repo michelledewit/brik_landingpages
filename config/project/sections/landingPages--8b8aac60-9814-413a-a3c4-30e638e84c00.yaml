@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: landingPages
+name: 'Landingspagina''s'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  b3528ed7-d45e-4ed6-8279-c6d3463caa6d:
+    enabledByDefault: true
+    hasUrls: true
+    template: landing/_entry
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: f47f9469-f1c3-4765-836c-68106929b3d6
+type: structure

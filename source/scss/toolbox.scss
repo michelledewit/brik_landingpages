@@ -1,0 +1,75 @@
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*transform*/
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin coverer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin word-wrap() {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@function black($opacity) {
+  @return rgba(black, $opacity)
+}
+
+@function white($opacity) {
+  @return rgba(white, $opacity)
+}
+
+@function map-get-deep-header-sizes($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map+px;
+}
+
+.columnsChecker {
+
+  position: fixed;
+  display: none;
+  transform: translate3d(0, 0, 0);
+  z-index: 10000;
+  bottom: 0;
+  width: 100%;
+
+  .columnChecker {
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+@function grayscale($value) {
+  @return #{ "grayscale(" + $value + ")" };
+}
+
+@mixin singleColorGradient($baseColor) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e1c3f+0,773265+100 */
+  background: desaturate(darken($baseColor, 30), 60); /* Old browsers */
+  background: -moz-linear-gradient(top, desaturate(darken($baseColor, 30), 60) 0%, $lightBrightColor 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, desaturate(darken($baseColor, 30), 60) 0%, $lightBrightColor 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, desaturate(darken($baseColor, 30), 60) 0%, $lightBrightColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='desaturate(darken($baseColor, 30), 60)', endColorstr='$lightBrightColor',GradientType=0 ); /* IE6-9 */
+}

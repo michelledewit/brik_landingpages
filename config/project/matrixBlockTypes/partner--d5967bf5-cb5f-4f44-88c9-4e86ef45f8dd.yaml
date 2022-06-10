@@ -1,0 +1,65 @@
+field: 39b31ae2-43f6-49ed-a835-78e0c8f362eb
+fieldLayouts:
+  1c76b2d8-57b4-48a6-8b29-6dce80c91231:
+    tabs:
+      -
+        fields:
+          ce7c9746-0cf4-476a-95f7-3336c7a46048:
+            required: true
+            sortOrder: 2
+          ee0e41f7-6978-4626-9356-37237f8d7d59:
+            required: false
+            sortOrder: 3
+          ffa9a2a0-5312-4d98-88cd-3b3b2065046d:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  ce7c9746-0cf4-476a-95f7-3336c7a46048:
+    contentColumnType: text
+    fieldGroup: null
+    handle: part
+    instructions: ''
+    name: Onderdeel
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ee0e41f7-6978-4626-9356-37237f8d7d59:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: partnerUrl
+    instructions: ''
+    name: Url
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  ffa9a2a0-5312-4d98-88cd-3b3b2065046d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: partnerName
+    instructions: ''
+    name: Naam
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: partner
+name: Partner
+sortOrder: 1

@@ -1,0 +1,36 @@
+{
+  "name": "Brik",
+  "version": "0.0.1",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "grunt": "~0.4.1",
+    "grunt-autoprefixer": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-bake": "^0.3.12",
+    "grunt-browser-sync": "^1.3.6",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-favicons": "^0.7.0",
+    "grunt-fontello": "^0.3.1",
+    "grunt-gulp": "^1.0.2",
+    "grunt-modernizr": "^0.5.2",
+    "grunt-newer": "^1.1.2",
+    "grunt-purgecss": "^1.0.0",
+    "grunt-sass": "^1.1.0",
+    "grunt-service-worker": "^1.0.3",
+    "grunt-text-replace": "^0.3.12",
+    "grunt-uncss": "^0.4.4",
+    "load-grunt-tasks": "^0.6.0",
+    "workbox-build": "^5.0.0"
+  },
+  "dependencies": {
+    "imagemin-gifsicle": "^4.2.0",
+    "imagemin-jpegtran": "^4.3.2",
+    "imagemin-optipng": "^4.3.0",
+    "pristinejs": "^0.1.5"
+  }
+}

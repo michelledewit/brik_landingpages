@@ -1,0 +1,61 @@
+field: 8c9358c3-bf41-42a7-8e69-6cc58c0edce1
+fieldLayouts:
+  b18a84b2-0a18-4c01-a296-075bd2c77750:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0517c7ae-795e-4bce-9a90-e309a926b35a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 93bdad80-71a8-4b19-a253-592808c96ca4
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  0517c7ae-795e-4bce-9a90-e309a926b35a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: overviewTitle
+    instructions: ''
+    name: Overzichtstitel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  93bdad80-71a8-4b19-a253-592808c96ca4:
+    contentColumnType: string
+    fieldGroup: null
+    handle: projectOverview
+    instructions: ''
+    name: Projectoverzicht
+    searchable: false
+    settings:
+      contentTable: '{{%matrixcontent_projectoverview_1}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix

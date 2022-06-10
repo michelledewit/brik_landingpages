@@ -1,0 +1,87 @@
+.item {
+  display: block;
+  border-bottom: 1px dotted $black;
+  position: relative;
+  padding: $global-margin/2 0;
+  cursor: pointer;
+
+  &:before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 1px;
+    width: 0;
+    background-color: $black;
+    transition: width 0.3s cubic-bezier(0, 1.1, .84, 1);
+  }
+
+  &:first-child {
+    margin-top: $global-margin/2;
+  }
+
+  &:last-child {
+    margin-bottom: $global-margin;
+  }
+
+  svg.arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    transition: transform 0.3s cubic-bezier(0, 1.1, .84, 1);
+
+    @include breakpoint(small only) {
+      right: 0;
+      bottom: 0;
+      transform: translateY(-90%) rotate(180deg) scale(0.5);
+      top: auto;
+    }
+}
+
+  .itemTitle {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .tags {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0, 1.1, .84, 1);
+
+    .tag {
+      color: $primary-color;
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+    svg.arrow {
+      transform: translateY(-50%) translateX(1rem) rotate(180deg);
+      @include breakpoint(small only) {
+        transform: translateY(-90%) translateX(0.5rem) rotate(180deg) scale(0.5);
+      }
+    }
+    .tags {
+      opacity: 0.8;
+    }
+  }
+}
+
+.black .item {
+  border-color: $white;
+
+  &:before {
+    background-color: $white;
+  }
+
+  .itemTitle {
+    color: $white;
+  }
+}

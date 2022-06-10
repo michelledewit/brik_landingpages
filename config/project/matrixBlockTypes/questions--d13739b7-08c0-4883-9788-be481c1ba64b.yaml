@@ -1,0 +1,68 @@
+field: ced20f61-b798-41f4-ab30-985f4c887ebe
+fieldLayouts:
+  dad5ad1f-85fc-42cd-be76-29ee43606d02:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 5953d7dd-9ed2-488e-b690-81c749bfdabb
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e304d758-d1e8-4859-acdd-0a4aceda4673
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5953d7dd-9ed2-488e-b690-81c749bfdabb:
+    contentColumnType: text
+    fieldGroup: null
+    handle: question
+    instructions: ''
+    name: Vraag
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e304d758-d1e8-4859-acdd-0a4aceda4673:
+    contentColumnType: text
+    fieldGroup: null
+    handle: answer
+    instructions: ''
+    name: Antwoord
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: questions
+name: Vragen
+sortOrder: 1
